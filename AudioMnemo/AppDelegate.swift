@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  AudioMnemo
+//  SQLiteTest
 //
-//  Created by yong gu on 10/8/15.
+//  Created by yong gu on 10/4/15.
 //  Copyright © 2015 Thu. All rights reserved.
 //
 
@@ -12,10 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var audioWords:AudioWords!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let tabVC: UITabBarController=(window!.rootViewController!) as! UITabBarController
+        audioWords = AudioWords(mainVCs: tabVC.viewControllers!)
         return true
     }
 

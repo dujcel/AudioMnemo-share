@@ -1,12 +1,13 @@
 //
 //  SecondViewController.swift
-//  AudioMnemo
+//  SQLiteTest
 //
-//  Created by yong gu on 10/8/15.
+//  Created by yong gu on 10/4/15.
 //  Copyright © 2015 Thu. All rights reserved.
 //
 
 import UIKit
+
 
 class SecondViewController: UIViewController {
 
