@@ -10,20 +10,61 @@
 		831A2842346EE36070F3D9D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512A5128AAB804AE5FACE58F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A63331B71BC63E5C0050FF6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AA1BC63E5C0050FF6F /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		A63331B81BC63E5C0050FF6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63331AB1BC63E5C0050FF6F /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		A63331B91BC63E5C0050FF6F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AC1BC63E5C0050FF6F /* AudioManager.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BA1BC63E5C0050FF6F /* AudioWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AD1BC63E5C0050FF6F /* AudioWords.swift */; settings = {ASSET_TAGS = (); }; };
+		A63331B91BC63E5C0050FF6F /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AC1BC63E5C0050FF6F /* Audio.swift */; settings = {ASSET_TAGS = (); }; };
+		A63331BA1BC63E5C0050FF6F /* AudioMnemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AD1BC63E5C0050FF6F /* AudioMnemo.swift */; settings = {ASSET_TAGS = (); }; };
 		A63331BB1BC63E5C0050FF6F /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AE1BC63E5C0050FF6F /* DB.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BC1BC63E5C0050FF6F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AF1BC63E5C0050FF6F /* FirstViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BD1BC63E5C0050FF6F /* GRE32.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A63331B01BC63E5C0050FF6F /* GRE32.TXT */; settings = {ASSET_TAGS = (); }; };
-		A63331BE1BC63E5C0050FF6F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B11BC63E5C0050FF6F /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BF1BC63E5C0050FF6F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B21BC63E5C0050FF6F /* SecondViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331C01BC63E5C0050FF6F /* SettingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B31BC63E5C0050FF6F /* SettingRootViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331C11BC63E5C0050FF6F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B41BC63E5C0050FF6F /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331C21BC63E5C0050FF6F /* word.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A63331B51BC63E5C0050FF6F /* word.sqlite */; settings = {ASSET_TAGS = (); }; };
-		A63331C31BC63E5C0050FF6F /* WordList32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A63331B61BC63E5C0050FF6F /* WordList32.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A63331BC1BC63E5C0050FF6F /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A63331BE1BC63E5C0050FF6F /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B11BC63E5C0050FF6F /* ListsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A63331BF1BC63E5C0050FF6F /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B21BC63E5C0050FF6F /* ListenViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A63331C01BC63E5C0050FF6F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B31BC63E5C0050FF6F /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A63331C31BC63E5C0050FF6F /* GRE 32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */; settings = {ASSET_TAGS = (); }; };
 		A63331C51BC63E700050FF6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63331C41BC63E700050FF6F /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		A63331C71BC6402B0050FF6F /* Dict.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = A63331C61BC6402B0050FF6F /* Dict.sqlite3 */; settings = {ASSET_TAGS = (); }; };
+		A63331CD1BC67A420050FF6F /* Dict.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = A63331CC1BC67A420050FF6F /* Dict.sqlite3 */; settings = {ASSET_TAGS = (); }; };
+		A648B95E1BC7AAC0004210C1 /* GRE 31.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A648B95C1BC7AAC0004210C1 /* GRE 31.TXT */; settings = {ASSET_TAGS = (); }; };
+		A648B95F1BC7AAC0004210C1 /* GRE 32.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A648B95D1BC7AAC0004210C1 /* GRE 32.TXT */; settings = {ASSET_TAGS = (); }; };
+		A648B9611BC7AADF004210C1 /* GRE 31.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A648B9601BC7AADF004210C1 /* GRE 31.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A648B9631BC8E77A004210C1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B9621BC8E77A004210C1 /* HelpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A648B9651BC8EA99004210C1 /* ScanFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A648B9691BCA3BAD004210C1 /* GRE 30.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A648B9681BCA3BAD004210C1 /* GRE 30.TXT */; settings = {ASSET_TAGS = (); }; };
+		A648B96B1BCA3BBC004210C1 /* GRE 30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A648B96F1BCE529D004210C1 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B96E1BCE529D004210C1 /* WordsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A672645A1BC63D6600CE6E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67264581BC63D6600CE6E6F /* LaunchScreen.storyboard */; };
+		A69DBAFC1BD87F000072CEFA /* GRE 23.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF71BD87F000072CEFA /* GRE 23.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBAFD1BD87F000072CEFA /* GRE 24.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF81BD87F000072CEFA /* GRE 24.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBAFE1BD87F000072CEFA /* GRE 25.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF91BD87F000072CEFA /* GRE 25.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBAFF1BD87F000072CEFA /* GRE 26.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAFA1BD87F000072CEFA /* GRE 26.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB001BD87F000072CEFA /* GRE 27.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAFB1BD87F000072CEFA /* GRE 27.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB061BD87F160072CEFA /* GRE 23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB011BD87F160072CEFA /* GRE 23.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB071BD87F160072CEFA /* GRE 24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB021BD87F160072CEFA /* GRE 24.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB081BD87F160072CEFA /* GRE 25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB031BD87F160072CEFA /* GRE 25.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB091BD87F160072CEFA /* GRE 26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB041BD87F160072CEFA /* GRE 26.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB0A1BD87F160072CEFA /* GRE 27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB051BD87F160072CEFA /* GRE 27.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB141BD94D6A0072CEFA /* GRE 33.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0C1BD94D6A0072CEFA /* GRE 33.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB151BD94D6A0072CEFA /* GRE 34.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0D1BD94D6A0072CEFA /* GRE 34.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB161BD94D6A0072CEFA /* GRE 35.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0E1BD94D6A0072CEFA /* GRE 35.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB171BD94D6A0072CEFA /* GRE 36.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0F1BD94D6A0072CEFA /* GRE 36.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB181BD94D6A0072CEFA /* GRE 37.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB101BD94D6A0072CEFA /* GRE 37.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB191BD94D6A0072CEFA /* GRE 38.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB111BD94D6A0072CEFA /* GRE 38.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB1A1BD94D6A0072CEFA /* GRE 39.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB121BD94D6A0072CEFA /* GRE 39.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB1B1BD94D6A0072CEFA /* GRE 40.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB131BD94D6A0072CEFA /* GRE 40.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB241BD94DA50072CEFA /* GRE 33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1C1BD94DA50072CEFA /* GRE 33.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB251BD94DA50072CEFA /* GRE 34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1D1BD94DA50072CEFA /* GRE 34.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB261BD94DA50072CEFA /* GRE 35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1E1BD94DA50072CEFA /* GRE 35.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB271BD94DA50072CEFA /* GRE 36.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1F1BD94DA50072CEFA /* GRE 36.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB281BD94DA50072CEFA /* GRE 37.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB201BD94DA50072CEFA /* GRE 37.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB291BD94DA50072CEFA /* GRE 38.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB211BD94DA50072CEFA /* GRE 38.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB2A1BD94DA50072CEFA /* GRE 39.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB221BD94DA50072CEFA /* GRE 39.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB2B1BD94DA50072CEFA /* GRE 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB231BD94DA50072CEFA /* GRE 40.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB2D1BDA15760072CEFA /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DBB2C1BDA15760072CEFA /* SpeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A69DBB301BDA7A780072CEFA /* GRE 41.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB2E1BDA7A780072CEFA /* GRE 41.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB311BDA7A780072CEFA /* GRE 42.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB2F1BDA7A780072CEFA /* GRE 42.TXT */; settings = {ASSET_TAGS = (); }; };
+		A69DBB341BDA7A920072CEFA /* GRE 41.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB321BDA7A920072CEFA /* GRE 41.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB351BDA7A920072CEFA /* GRE 42.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB331BDA7A920072CEFA /* GRE 42.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A6D13B401BD67744000B429E /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D13B3F1BD67744000B429E /* LinkViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A6E5240C1BD3D8EF0045E291 /* GRE 28.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240A1BD3D8EF0045E291 /* GRE 28.TXT */; settings = {ASSET_TAGS = (); }; };
+		A6E5240D1BD3D8EF0045E291 /* GRE 29.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240B1BD3D8EF0045E291 /* GRE 29.TXT */; settings = {ASSET_TAGS = (); }; };
+		A6E524101BD3D90F0045E291 /* GRE 28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240E1BD3D90F0045E291 /* GRE 28.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A6E524111BD3D90F0045E291 /* GRE 29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240F1BD3D90F0045E291 /* GRE 29.mp3 */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,22 +72,63 @@
 		512A5128AAB804AE5FACE58F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63331AA1BC63E5C0050FF6F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63331AB1BC63E5C0050FF6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A63331AC1BC63E5C0050FF6F /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		A63331AD1BC63E5C0050FF6F /* AudioWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioWords.swift; sourceTree = "<group>"; };
+		A63331AC1BC63E5C0050FF6F /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		A63331AD1BC63E5C0050FF6F /* AudioMnemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioMnemo.swift; sourceTree = "<group>"; };
 		A63331AE1BC63E5C0050FF6F /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
-		A63331AF1BC63E5C0050FF6F /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		A63331B01BC63E5C0050FF6F /* GRE32.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GRE32.TXT; sourceTree = "<group>"; };
-		A63331B11BC63E5C0050FF6F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		A63331B21BC63E5C0050FF6F /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		A63331B31BC63E5C0050FF6F /* SettingRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingRootViewController.swift; sourceTree = "<group>"; };
-		A63331B41BC63E5C0050FF6F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		A63331B51BC63E5C0050FF6F /* word.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = word.sqlite; sourceTree = "<group>"; };
-		A63331B61BC63E5C0050FF6F /* WordList32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WordList32.mp3; sourceTree = "<group>"; };
+		A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		A63331B11BC63E5C0050FF6F /* ListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		A63331B21BC63E5C0050FF6F /* ListenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenViewController.swift; sourceTree = "<group>"; };
+		A63331B31BC63E5C0050FF6F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 32.mp3"; sourceTree = "<group>"; };
 		A63331C41BC63E700050FF6F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A63331C61BC6402B0050FF6F /* Dict.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dict.sqlite3; sourceTree = "<group>"; };
+		A63331CC1BC67A420050FF6F /* Dict.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dict.sqlite3; sourceTree = "<group>"; };
+		A648B95C1BC7AAC0004210C1 /* GRE 31.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 31.TXT"; sourceTree = "<group>"; };
+		A648B95D1BC7AAC0004210C1 /* GRE 32.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 32.TXT"; sourceTree = "<group>"; };
+		A648B9601BC7AADF004210C1 /* GRE 31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 31.mp3"; sourceTree = "<group>"; };
+		A648B9621BC8E77A004210C1 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanFilterViewController.swift; sourceTree = "<group>"; };
+		A648B9681BCA3BAD004210C1 /* GRE 30.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 30.TXT"; sourceTree = "<group>"; };
+		A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 30.mp3"; sourceTree = "<group>"; };
+		A648B96E1BCE529D004210C1 /* WordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 		A672644A1BC63D6600CE6E6F /* AudioMnemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioMnemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67264591BC63D6600CE6E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A672645B1BC63D6600CE6E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A69DBAF71BD87F000072CEFA /* GRE 23.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 23.TXT"; sourceTree = "<group>"; };
+		A69DBAF81BD87F000072CEFA /* GRE 24.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 24.TXT"; sourceTree = "<group>"; };
+		A69DBAF91BD87F000072CEFA /* GRE 25.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 25.TXT"; sourceTree = "<group>"; };
+		A69DBAFA1BD87F000072CEFA /* GRE 26.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 26.TXT"; sourceTree = "<group>"; };
+		A69DBAFB1BD87F000072CEFA /* GRE 27.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 27.TXT"; sourceTree = "<group>"; };
+		A69DBB011BD87F160072CEFA /* GRE 23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 23.mp3"; sourceTree = "<group>"; };
+		A69DBB021BD87F160072CEFA /* GRE 24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 24.mp3"; sourceTree = "<group>"; };
+		A69DBB031BD87F160072CEFA /* GRE 25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 25.mp3"; sourceTree = "<group>"; };
+		A69DBB041BD87F160072CEFA /* GRE 26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 26.mp3"; sourceTree = "<group>"; };
+		A69DBB051BD87F160072CEFA /* GRE 27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 27.mp3"; sourceTree = "<group>"; };
+		A69DBB0C1BD94D6A0072CEFA /* GRE 33.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 33.TXT"; sourceTree = "<group>"; };
+		A69DBB0D1BD94D6A0072CEFA /* GRE 34.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 34.TXT"; sourceTree = "<group>"; };
+		A69DBB0E1BD94D6A0072CEFA /* GRE 35.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 35.TXT"; sourceTree = "<group>"; };
+		A69DBB0F1BD94D6A0072CEFA /* GRE 36.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 36.TXT"; sourceTree = "<group>"; };
+		A69DBB101BD94D6A0072CEFA /* GRE 37.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 37.TXT"; sourceTree = "<group>"; };
+		A69DBB111BD94D6A0072CEFA /* GRE 38.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 38.TXT"; sourceTree = "<group>"; };
+		A69DBB121BD94D6A0072CEFA /* GRE 39.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 39.TXT"; sourceTree = "<group>"; };
+		A69DBB131BD94D6A0072CEFA /* GRE 40.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 40.TXT"; sourceTree = "<group>"; };
+		A69DBB1C1BD94DA50072CEFA /* GRE 33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 33.mp3"; sourceTree = "<group>"; };
+		A69DBB1D1BD94DA50072CEFA /* GRE 34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 34.mp3"; sourceTree = "<group>"; };
+		A69DBB1E1BD94DA50072CEFA /* GRE 35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 35.mp3"; sourceTree = "<group>"; };
+		A69DBB1F1BD94DA50072CEFA /* GRE 36.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 36.mp3"; sourceTree = "<group>"; };
+		A69DBB201BD94DA50072CEFA /* GRE 37.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 37.mp3"; sourceTree = "<group>"; };
+		A69DBB211BD94DA50072CEFA /* GRE 38.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 38.mp3"; sourceTree = "<group>"; };
+		A69DBB221BD94DA50072CEFA /* GRE 39.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 39.mp3"; sourceTree = "<group>"; };
+		A69DBB231BD94DA50072CEFA /* GRE 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 40.mp3"; sourceTree = "<group>"; };
+		A69DBB2C1BDA15760072CEFA /* SpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
+		A69DBB2E1BDA7A780072CEFA /* GRE 41.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 41.TXT"; sourceTree = "<group>"; };
+		A69DBB2F1BDA7A780072CEFA /* GRE 42.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 42.TXT"; sourceTree = "<group>"; };
+		A69DBB321BDA7A920072CEFA /* GRE 41.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 41.mp3"; sourceTree = "<group>"; };
+		A69DBB331BDA7A920072CEFA /* GRE 42.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 42.mp3"; sourceTree = "<group>"; };
+		A6D13B3F1BD67744000B429E /* LinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
+		A6E5240A1BD3D8EF0045E291 /* GRE 28.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 28.TXT"; sourceTree = "<group>"; };
+		A6E5240B1BD3D8EF0045E291 /* GRE 29.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 29.TXT"; sourceTree = "<group>"; };
+		A6E5240E1BD3D90F0045E291 /* GRE 28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 28.mp3"; sourceTree = "<group>"; };
+		A6E5240F1BD3D90F0045E291 /* GRE 29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 29.mp3"; sourceTree = "<group>"; };
 		C247C192FE1FBBF3CF2DE59E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,23 +175,72 @@
 			children = (
 				A63331AA1BC63E5C0050FF6F /* AppDelegate.swift */,
 				A63331C41BC63E700050FF6F /* Main.storyboard */,
+				A6D13B3F1BD67744000B429E /* LinkViewController.swift */,
+				A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */,
+				A63331B21BC63E5C0050FF6F /* ListenViewController.swift */,
+				A69DBB2C1BDA15760072CEFA /* SpeedViewController.swift */,
+				A63331B11BC63E5C0050FF6F /* ListsViewController.swift */,
+				A648B96E1BCE529D004210C1 /* WordsViewController.swift */,
+				A63331B31BC63E5C0050FF6F /* SettingViewController.swift */,
+				A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */,
+				A648B9621BC8E77A004210C1 /* HelpViewController.swift */,
 				A63331AB1BC63E5C0050FF6F /* Assets.xcassets */,
-				A67264581BC63D6600CE6E6F /* LaunchScreen.storyboard */,
-				A63331AC1BC63E5C0050FF6F /* AudioManager.swift */,
-				A63331AD1BC63E5C0050FF6F /* AudioWords.swift */,
+				A63331AD1BC63E5C0050FF6F /* AudioMnemo.swift */,
+				A63331AC1BC63E5C0050FF6F /* Audio.swift */,
 				A63331AE1BC63E5C0050FF6F /* DB.swift */,
-				A63331AF1BC63E5C0050FF6F /* FirstViewController.swift */,
-				A63331B01BC63E5C0050FF6F /* GRE32.TXT */,
-				A63331B11BC63E5C0050FF6F /* SearchViewController.swift */,
-				A63331B21BC63E5C0050FF6F /* SecondViewController.swift */,
-				A63331B31BC63E5C0050FF6F /* SettingRootViewController.swift */,
-				A63331B41BC63E5C0050FF6F /* SettingViewController.swift */,
-				A63331B51BC63E5C0050FF6F /* word.sqlite */,
-				A63331B61BC63E5C0050FF6F /* WordList32.mp3 */,
+				A67264581BC63D6600CE6E6F /* LaunchScreen.storyboard */,
+				A69DBB0B1BD87F340072CEFA /* Data */,
+				A63331CC1BC67A420050FF6F /* Dict.sqlite3 */,
 				A672645B1BC63D6600CE6E6F /* Info.plist */,
-				A63331C61BC6402B0050FF6F /* Dict.sqlite3 */,
 			);
 			path = AudioMnemo;
+			sourceTree = "<group>";
+		};
+		A69DBB0B1BD87F340072CEFA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A69DBAF71BD87F000072CEFA /* GRE 23.TXT */,
+				A69DBAF81BD87F000072CEFA /* GRE 24.TXT */,
+				A69DBAF91BD87F000072CEFA /* GRE 25.TXT */,
+				A69DBAFA1BD87F000072CEFA /* GRE 26.TXT */,
+				A69DBAFB1BD87F000072CEFA /* GRE 27.TXT */,
+				A6E5240A1BD3D8EF0045E291 /* GRE 28.TXT */,
+				A6E5240B1BD3D8EF0045E291 /* GRE 29.TXT */,
+				A648B9681BCA3BAD004210C1 /* GRE 30.TXT */,
+				A648B95C1BC7AAC0004210C1 /* GRE 31.TXT */,
+				A648B95D1BC7AAC0004210C1 /* GRE 32.TXT */,
+				A69DBB0C1BD94D6A0072CEFA /* GRE 33.TXT */,
+				A69DBB0D1BD94D6A0072CEFA /* GRE 34.TXT */,
+				A69DBB0E1BD94D6A0072CEFA /* GRE 35.TXT */,
+				A69DBB0F1BD94D6A0072CEFA /* GRE 36.TXT */,
+				A69DBB101BD94D6A0072CEFA /* GRE 37.TXT */,
+				A69DBB111BD94D6A0072CEFA /* GRE 38.TXT */,
+				A69DBB121BD94D6A0072CEFA /* GRE 39.TXT */,
+				A69DBB131BD94D6A0072CEFA /* GRE 40.TXT */,
+				A69DBB2E1BDA7A780072CEFA /* GRE 41.TXT */,
+				A69DBB2F1BDA7A780072CEFA /* GRE 42.TXT */,
+				A69DBB011BD87F160072CEFA /* GRE 23.mp3 */,
+				A69DBB021BD87F160072CEFA /* GRE 24.mp3 */,
+				A69DBB031BD87F160072CEFA /* GRE 25.mp3 */,
+				A69DBB041BD87F160072CEFA /* GRE 26.mp3 */,
+				A69DBB051BD87F160072CEFA /* GRE 27.mp3 */,
+				A6E5240E1BD3D90F0045E291 /* GRE 28.mp3 */,
+				A6E5240F1BD3D90F0045E291 /* GRE 29.mp3 */,
+				A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */,
+				A648B9601BC7AADF004210C1 /* GRE 31.mp3 */,
+				A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */,
+				A69DBB1C1BD94DA50072CEFA /* GRE 33.mp3 */,
+				A69DBB1D1BD94DA50072CEFA /* GRE 34.mp3 */,
+				A69DBB1E1BD94DA50072CEFA /* GRE 35.mp3 */,
+				A69DBB1F1BD94DA50072CEFA /* GRE 36.mp3 */,
+				A69DBB201BD94DA50072CEFA /* GRE 37.mp3 */,
+				A69DBB211BD94DA50072CEFA /* GRE 38.mp3 */,
+				A69DBB221BD94DA50072CEFA /* GRE 39.mp3 */,
+				A69DBB231BD94DA50072CEFA /* GRE 40.mp3 */,
+				A69DBB321BDA7A920072CEFA /* GRE 41.mp3 */,
+				A69DBB331BDA7A920072CEFA /* GRE 42.mp3 */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		AA21B11064E8E5F1B2130276 /* Pods */ = {
@@ -183,13 +314,50 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69DBB0A1BD87F160072CEFA /* GRE 27.mp3 in Resources */,
+				A6E524111BD3D90F0045E291 /* GRE 29.mp3 in Resources */,
+				A69DBB1A1BD94D6A0072CEFA /* GRE 39.TXT in Resources */,
+				A648B95E1BC7AAC0004210C1 /* GRE 31.TXT in Resources */,
 				A63331B81BC63E5C0050FF6F /* Assets.xcassets in Resources */,
+				A69DBB181BD94D6A0072CEFA /* GRE 37.TXT in Resources */,
+				A69DBB151BD94D6A0072CEFA /* GRE 34.TXT in Resources */,
+				A69DBB301BDA7A780072CEFA /* GRE 41.TXT in Resources */,
+				A69DBAFD1BD87F000072CEFA /* GRE 24.TXT in Resources */,
+				A6E524101BD3D90F0045E291 /* GRE 28.mp3 in Resources */,
+				A69DBB091BD87F160072CEFA /* GRE 26.mp3 in Resources */,
+				A69DBB2B1BD94DA50072CEFA /* GRE 40.mp3 in Resources */,
 				A672645A1BC63D6600CE6E6F /* LaunchScreen.storyboard in Resources */,
-				A63331BD1BC63E5C0050FF6F /* GRE32.TXT in Resources */,
+				A69DBB171BD94D6A0072CEFA /* GRE 36.TXT in Resources */,
+				A648B9691BCA3BAD004210C1 /* GRE 30.TXT in Resources */,
 				A63331C51BC63E700050FF6F /* Main.storyboard in Resources */,
-				A63331C21BC63E5C0050FF6F /* word.sqlite in Resources */,
-				A63331C31BC63E5C0050FF6F /* WordList32.mp3 in Resources */,
-				A63331C71BC6402B0050FF6F /* Dict.sqlite3 in Resources */,
+				A63331C31BC63E5C0050FF6F /* GRE 32.mp3 in Resources */,
+				A69DBB271BD94DA50072CEFA /* GRE 36.mp3 in Resources */,
+				A648B96B1BCA3BBC004210C1 /* GRE 30.mp3 in Resources */,
+				A69DBB161BD94D6A0072CEFA /* GRE 35.TXT in Resources */,
+				A69DBB1B1BD94D6A0072CEFA /* GRE 40.TXT in Resources */,
+				A69DBB341BDA7A920072CEFA /* GRE 41.mp3 in Resources */,
+				A69DBAFE1BD87F000072CEFA /* GRE 25.TXT in Resources */,
+				A648B9611BC7AADF004210C1 /* GRE 31.mp3 in Resources */,
+				A69DBB351BDA7A920072CEFA /* GRE 42.mp3 in Resources */,
+				A69DBAFC1BD87F000072CEFA /* GRE 23.TXT in Resources */,
+				A69DBB241BD94DA50072CEFA /* GRE 33.mp3 in Resources */,
+				A69DBB081BD87F160072CEFA /* GRE 25.mp3 in Resources */,
+				A6E5240D1BD3D8EF0045E291 /* GRE 29.TXT in Resources */,
+				A69DBB141BD94D6A0072CEFA /* GRE 33.TXT in Resources */,
+				A69DBB261BD94DA50072CEFA /* GRE 35.mp3 in Resources */,
+				A69DBB291BD94DA50072CEFA /* GRE 38.mp3 in Resources */,
+				A69DBB191BD94D6A0072CEFA /* GRE 38.TXT in Resources */,
+				A6E5240C1BD3D8EF0045E291 /* GRE 28.TXT in Resources */,
+				A69DBB251BD94DA50072CEFA /* GRE 34.mp3 in Resources */,
+				A63331CD1BC67A420050FF6F /* Dict.sqlite3 in Resources */,
+				A648B95F1BC7AAC0004210C1 /* GRE 32.TXT in Resources */,
+				A69DBB2A1BD94DA50072CEFA /* GRE 39.mp3 in Resources */,
+				A69DBB071BD87F160072CEFA /* GRE 24.mp3 in Resources */,
+				A69DBB061BD87F160072CEFA /* GRE 23.mp3 in Resources */,
+				A69DBB281BD94DA50072CEFA /* GRE 37.mp3 in Resources */,
+				A69DBAFF1BD87F000072CEFA /* GRE 26.TXT in Resources */,
+				A69DBB311BDA7A780072CEFA /* GRE 42.TXT in Resources */,
+				A69DBB001BD87F000072CEFA /* GRE 27.TXT in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,15 +416,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63331BE1BC63E5C0050FF6F /* SearchViewController.swift in Sources */,
-				A63331BC1BC63E5C0050FF6F /* FirstViewController.swift in Sources */,
-				A63331B91BC63E5C0050FF6F /* AudioManager.swift in Sources */,
-				A63331C01BC63E5C0050FF6F /* SettingRootViewController.swift in Sources */,
+				A63331BE1BC63E5C0050FF6F /* ListsViewController.swift in Sources */,
+				A648B96F1BCE529D004210C1 /* WordsViewController.swift in Sources */,
+				A63331BC1BC63E5C0050FF6F /* ScanViewController.swift in Sources */,
+				A63331B91BC63E5C0050FF6F /* Audio.swift in Sources */,
+				A648B9651BC8EA99004210C1 /* ScanFilterViewController.swift in Sources */,
+				A69DBB2D1BDA15760072CEFA /* SpeedViewController.swift in Sources */,
+				A63331C01BC63E5C0050FF6F /* SettingViewController.swift in Sources */,
+				A648B9631BC8E77A004210C1 /* HelpViewController.swift in Sources */,
 				A63331BB1BC63E5C0050FF6F /* DB.swift in Sources */,
-				A63331C11BC63E5C0050FF6F /* SettingViewController.swift in Sources */,
-				A63331BF1BC63E5C0050FF6F /* SecondViewController.swift in Sources */,
+				A6D13B401BD67744000B429E /* LinkViewController.swift in Sources */,
+				A63331BF1BC63E5C0050FF6F /* ListenViewController.swift in Sources */,
 				A63331B71BC63E5C0050FF6F /* AppDelegate.swift in Sources */,
-				A63331BA1BC63E5C0050FF6F /* AudioWords.swift in Sources */,
+				A63331BA1BC63E5C0050FF6F /* AudioMnemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
