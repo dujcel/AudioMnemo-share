@@ -20,51 +20,52 @@ class DB{
     var db:Connection!        //main db
     
     //Tables
-    let WordsTable = Table("Words")
-
+    let DictTable = Table("dict")
+    let ListTable = Table("list")
+    let WordInfoTable = Table("word_info")
+    let LinkTable = Table("link")
+    let ConfigTable = Table("config")
     
-    let LinkTable = Table("Link")
-    
-    let BookTable = Table("Book")
-    let ListsTable = Table("Lists")
-    let LevelTable = Table("Level")
-    let ConfigTable = Table("Config")
+    let ScanListTable = Table("scan_list")
+//    let ListenTable = Table("listen_list")
     
     
-    //Columns
-    let id_c = Expression <Int>("id")
-    let name_c = Expression<String>("name")
     
     //Dict
-    
+    let wordID_c = Expression<Int>("word_id")
+    let wordName_c = Expression<String>("word_name")
     let phono_c = Expression<String>("phonogram")
     let trans_c = Expression<String>("translation")
     let t1_c = Expression<Double>("audio_time1")   //start time of word (seconds)
     let t2_c = Expression<Double>("audio_time2")   //end time of word
     let t3_c = Expression<Double>("audio_time3")   //start time of translation
     let t4_c = Expression<Double>("audio_time4")   //end time of translation
-    let audio_c = Expression<String>("audio_file")
+    let audioFile_c = Expression<String>("audio_file")
     
-    //Book
+    //List
     let listID_c = Expression<Int>("list_id")
+    let listName_c = Expression<String>("list_name")
     let wordsCount_c = Expression<Int>("words_count")
-    let scanCheck_c = Expression<Bool>("scan_check")
-    let scanCount_c = Expression<Int>("scan_check_count")
+    let check_c = Expression<Bool>("check")
+
     
-    //ListTable and LevelTable
-    let wordID_c = Expression<Int>("word_id")
+    //WordInfo: wordID_c   listID_c
     let level_c = Expression<Int>("level")
+    
+    //LinkTable
+    let linkID_c = Expression<Int>("link_id")
+    let linkWordID_c = Expression<Int>("link_word_id")
     
     //ConfigTable
     let key_c = Expression<String>("key")
     let value_c = Expression<Int>("value")
     
-    //LinkTable
-    let linkID_c = Expression<Int>("link_id")
+    //ScanListTable
+    let scanID_c = Expression<Int>("scan_id")
 
     //id counter
-    var id1: Int = 0   //for WordsTable
-    var id2: Int = 0   //for BookTable
+    var wordCount: Int = 0   //for DictTable
+    var listCount: Int = 0   //for ListTable
     
     
     let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first!
@@ -73,7 +74,6 @@ class DB{
     init(am: AudioMnemo){
         self.am = am
         let isDBsExist = NSFileManager.defaultManager().fileExistsAtPath("\(dir)/Dict.sqlite3")
-        print(Int.max)
         do {
             dict = try Connection("\(dir)/Dict.sqlite3")   //create dababase if not exist
             db = try Connection("\(dir)/db.sqlite3")
@@ -87,30 +87,26 @@ class DB{
             print("database connection failed: \(error)")
         }
     }
+
     
     
-    
-//    func save() throws{
-//        saveBookAndLists()
-//        saveConfig()
-//        saveLevels()
-//        saveLinks()
-//    }
-    
-    
-    func loadLinks(){
-        for link_r in db.prepare(LinkTable) {
-            am.words[link_r[wordID_c]].linksID.insert(link_r[linkID_c])
-            am.words[link_r[linkID_c]].linksID.insert(link_r[wordID_c])
+    func readLinks(wordID:Int) -> Set<Int>{
+        var linkWordIDs = Set<Int>()
+        for link_row in db.prepare(LinkTable.filter(linkWordID_c == wordID)){
+            linkWordIDs.insert(link_row[wordID_c])
         }
+        for link_row in db.prepare(LinkTable.filter(wordID_c == wordID)){
+            linkWordIDs.insert(link_row[linkWordID_c])
+        }
+        return linkWordIDs
     }
     
     func addLink(id1:Int, with id2:Int){
         do{
             if id1 < id2 {
-                try db.run(LinkTable.insert(or: .Ignore, wordID_c <- id1, linkID_c <- id2))
+                try db.run(LinkTable.insert(or: .Abort, wordID_c <- id1, linkWordID_c <- id2))
             }else{
-                try db.run(LinkTable.insert(or: .Ignore, wordID_c <- id2, linkID_c <- id1))
+                try db.run(LinkTable.insert(or: .Abort, wordID_c <- id2, linkWordID_c <- id1))
             }
         }catch{
             print(" link \(id1) and \(id2) error")
@@ -120,154 +116,161 @@ class DB{
     func cutLink(id1:Int, with id2:Int){
         do{
             if id1 < id2 {
-                try db.run(LinkTable.filter(wordID_c == id1 && linkID_c == id2).delete())
+                try db.run(LinkTable.filter(wordID_c == id1 && linkWordID_c == id2).delete())
             }else{
-                try db.run(LinkTable.filter(wordID_c == id2 && linkID_c == id1).delete())
+                try db.run(LinkTable.filter(wordID_c == id2 && linkWordID_c == id1).delete())
             }
         }catch{
             print("cut link \(id1) and \(id2) error")
         }
     }
     
-//    func saveLinks(){
-//        do{
-//            try db.run(LinkTable.delete())
-//            for word in am.words {
-//                for linkID in word.linksID {
-//                    if linkID > word.id {
-//                        try db.run(LinkTable.insert(or: .Ignore, wordID_c <- word.id, linkID_c <- linkID))
-//                    }
-//                }
-//            }
-//        }catch{
-//            print("save LevelTable error")
+    func readScanWord(scanID:Int) ->Word?{
+        if let scan_row = db.pluck(ScanListTable.filter(scanID_c == scanID)){
+            let word = readWord(scan_row[wordID_c])
+            word?.level = scan_row[level_c]
+            return word
+        }else{
+            return nil
+        }
+    }
+//    func readScanList() -> [Int]{
+//        var wordsID = [Int]()
+//        for word_row in db.prepare(ScanListTable){
+//            wordsID.append(word_row[wordID_c])
 //        }
+//        return wordsID
 //    }
-    
-    func loadWords(){
-        am.words = [Word]()
-        am.words.append(Word())
-        for word_r in dict.prepare(WordsTable) {
-            let word = Word()
-            word.id = word_r[id_c]
-            word.name = word_r[name_c]
+    func readWordName(wordID:Int) -> String?{
+        if let word_r = dict.pluck(DictTable.filter(wordID_c == wordID)) {
+            return word_r[wordName_c]
+        }else{
+            return nil
+        }
+    }
+     func readWord(wordID:Int) -> Word?{
+        let word = Word()
+        if let word_r = dict.pluck(DictTable.filter(wordID_c == wordID)) {
+            
+            word.id = word_r[wordID_c]
+            word.name = word_r[wordName_c]
             word.phonogram = word_r[phono_c]
-            word.audioFile = word_r[audio_c]
+            word.audioFile = word_r[audioFile_c]
             word.audioTime1 = word_r[t1_c]
             word.audioTime2 = word_r[t2_c]
             word.audioTime3 = word_r[t3_c]
             word.audioTime4 = word_r[t4_c]
-            am.words.append(word)
+            word.linksID = readLinks(wordID)
+            return word
+        }else{
+            return nil
         }
     }
+
+    func searchWordsMatchPattern(pattern:String, exceptFor exceptionWordName:String?) -> [Int]{
+        var wordsID = [Int]()
+        for word_row in dict.prepare(DictTable.filter(wordName_c.like(pattern))){
+            if word_row[wordName_c] != exceptionWordName{
+                wordsID.append(word_row[wordID_c])
+            }
+        }
+        return wordsID
+    }
     
-    func loadBookAndLists(){
-        am.lists = [List]()
-        for list_r in db.prepare(BookTable) {
+    func readLists() -> [List]{
+       var lists = [List]()
+        for list_row in db.prepare(ListTable){
             let list = List()
-            let rows = ListsTable.filter(listID_c == list_r[id_c])
-            
-            for row in db.prepare(rows) {
-                list.wordsID.append(row[wordID_c])
-            }
-            list.id = list_r[id_c]
-            list.name = list_r[name_c]
-            list.wordsCount = list_r[wordsCount_c]
-            list.scanCheck = list_r[scanCheck_c]
-            list.scanCount = list_r[scanCount_c]
-            am.lists.append(list)
+            list.id = list_row[listID_c]
+            list.name = list_row[listName_c]
+            list.check = list_row[check_c]
+            list.wordsCount = list_row[wordsCount_c]
+            lists.append(list)
         }
+        return lists
     }
-    
-    func updateBook(){
+   
+    func updateListCheck(listID:Int, check:Bool){
         do{
-            try db.transaction{
-                for list in self.am.lists{
-                    try self.db.run(self.BookTable.filter(self.id_c == list.id).update(self.scanCheck_c <- list.scanCheck, self.scanCount_c <- list.scanCount))
-                }
-                try self.db.run(self.BookTable.filter(self.id_c == 1).update(self.wordsCount_c <- self.am.lists[0].wordsCount))
-            }
+            try db.run(ListTable.filter(listID_c == listID).update(check_c <- check))
         }catch{
-            print("transction update BookTable error")
+            print("update list check error")
         }
     }
     
     
-    func updateScanList(){
-        do{
+    func updateScanList(minLevel:Int, maxLevel:Int){
+        
+        let query = WordInfoTable.filter(level_c >= minLevel && level_c <= maxLevel).join(ListTable.filter(check_c == true), on: ListTable[listID_c] == WordInfoTable[listID_c]).select(WordInfoTable[wordID_c], level_c.max).group(WordInfoTable[wordID_c])
+        do {
             try db.transaction{
-                try self.db.run(self.ListsTable.filter(self.listID_c == 1).delete())
-                for wordID in self.am.lists[0].wordsID {
-                    try self.db.run(self.ListsTable.insert(or: .Ignore, self.wordID_c <- wordID, self.listID_c <- 1))
+                try self.db.run(self.ScanListTable.delete())
+                for row in self.db.prepare(query){
+                    try self.db.run(self.ScanListTable.insert(or:.Abort, self.wordID_c <- row[self.wordID_c], self.level_c <- row[self.level_c.max]!))
                 }
             }
-        }catch{
-            print("transction update ScanList error")
-        }
+        } catch{}
+        updateConfig("scan_index", with: 1)
+        updateConfig("scan_num", with: db.scalar(ScanListTable.count))
     }
-    
-    func updateScanList(scanCount count:Int){
-        do{
-            try db.run(BookTable.filter(id_c == 1).update(scanCount_c <- count))
-        }catch{
-            print("update scanCount error")
-        }
-    }
-    
-    func loadLevels(){
-            for level_r in db.prepare(LevelTable) {
-                am.words[level_r[wordID_c]].level = level_r[level_c]
+    func getScanListAudio() -> ([Double],[Double],[String]){
+        var t1 = [Double]()
+        var t2 = [Double]()
+        var files = [String]()
+        
+        let reverse = (readConfig("listen_reverse")! == 1)
+        for row in db.prepare(ScanListTable){
+            if let word = readWord(row[wordID_c]) {
+                if reverse {
+                    t1.append(word.audioTime3)
+                    t1.append(word.audioTime1)
+                    t2.append(word.audioTime4)
+                    t2.append(word.audioTime2)
+                }else{
+                    t1.append(word.audioTime1)
+                    t1.append(word.audioTime3)
+                    t2.append(word.audioTime2)
+                    t2.append(word.audioTime4)
+                }
+                files.append(word.audioFile)
+                files.append(word.audioFile)
             }
+        }
+        return (t1,t2,files)
+    }
+    
+    func readLevel(wordID:Int) -> Int{
+        if let level_row = db.pluck(WordInfoTable.filter(wordID_c == wordID)){
+            return level_row[level_c]
+        }else{
+            return 0
+        }
     }
     
     func updateLevel(wordID:Int, to level:Int){
         do{
             if level > 0 {
-                 try db.run(LevelTable.filter(wordID_c == wordID).update(level_c <- level))
+                 try db.run(WordInfoTable.filter(wordID_c == wordID).update(level_c <- level))
             }else{
-                try db.run(LevelTable.filter(wordID_c == wordID).delete())
+                try db.run(WordInfoTable.filter(wordID_c == wordID).delete())
             }
         }catch{
             print("update \(wordID) level to \(level) error")
         }
     }
     
-//    func saveLevels(){
-//        do{
-//            try db.run(LevelTable.delete())
-//            for word in am.words {
-//                if word.level > 0 {
-//                    try db.run(LevelTable.insert(or: .Replace, wordID_c <- word.id, level_c <- word.level))
-//                }
-//            }
-//        }catch{
-//            print("save LevelTable error")
-//        }
-//    }
-    
-    func loadConfig(){
-        am.config = [String : Int]()
-        for row in db.prepare(ConfigTable) {
-            am.config[row[key_c]] = row[value_c]
+    func readConfig(key:String) -> Int?{
+        if let config_row = db.pluck(ConfigTable.filter(key_c == key)){
+            return config_row[value_c]
+        }else{
+            return nil
         }
     }
     func updateConfig(key: String, with value: Int){
         do{
-            try db.run(ConfigTable.filter(key_c == key).update(value_c <- am.config[key]!))
+            try db.run(ConfigTable.filter(key_c == key).update(value_c <- value))
         }catch{}
     }
-//    func saveConfig(){
-//        do{
-//        for key in am.config.keys{
-//        try db.run(ConfigTable.filter(key_c == key).update(value_c <- am.config[key]!))
-//        }
-//        }catch{
-//            print("save ConfigTable error")
-//        }
-//        
-//    }
-    
-    
     
     func updateDBWithFiles() -> Int{
         var count:Int = 0
@@ -282,85 +285,97 @@ class DB{
         }
         return count
     }
-    private func updateDBWithFile(textFile: String, audioFileName: String){
-//        print("update with file:\(textFile), audioFile:\(audioFileName)")
+    private func updateDBWithFile(textFileName: String, audioFileName: String){
         let separators = NSCharacterSet.whitespaceAndNewlineCharacterSet()
-        var t1,t2,t3,t4:Double
-        var name:String
+        var t1:Double = 0.0
+        var t2:Double = 0.0
+        var t3:Double = 0.0
+        var t4:Double = 0.0
+        var wordName:String = String()
         var i:Int=0
+        var num:Int=0
+        var wordsID = [Int]()
         
-        //reading
         do {
-            let textPath = NSBundle.mainBundle().pathForResource(textFile, ofType:"TXT")!
+            let textPath = NSBundle.mainBundle().pathForResource(textFileName, ofType:"TXT")!
             let data = try NSString(contentsOfFile: textPath, encoding: NSUTF8StringEncoding)
             let words = data.componentsSeparatedByCharactersInSet(separators)
             
             
-            var num:Int=0
             
-            id2++
-            try db.run(BookTable.insert(or: .Abort, id_c <- id2, name_c <- textFile, wordsCount_c <- num, scanCheck_c <- false, scanCount_c <- 0))
             
-            while(i+5<words.count){
-                t1=(words[i++] as NSString).doubleValue
-                t2=(words[i++] as NSString).doubleValue
-                name=words[i++]
-                t3=(words[i++] as NSString).doubleValue
-                t4=(words[i++] as NSString).doubleValue
-                i++
-                num++
-                id1++
-                
-                try dict.run(WordsTable.insert(or: .Abort, id_c <- id1, name_c <- name, phono_c <- "a", trans_c <- "b", t1_c <- t1, t2_c <- t2, t3_c <- t3, t4_c <- t4, audio_c <- audioFileName ))
-                try db.run(ListsTable.insert(or: .Abort, wordID_c <- id1, listID_c <- id2))
-                try db.run(LevelTable.insert(or: .Replace, wordID_c <- id1, level_c <- 0))
+            listCount++
+            try db.run(ListTable.insert(or: .Abort, listID_c <- listCount, listName_c <- textFileName, wordsCount_c <- num, check_c <- false))
+            try dict.transaction{
+                while(i+5 < words.count){
+                    t1=(words[i++] as NSString).doubleValue
+                    t2=(words[i++] as NSString).doubleValue
+                    wordName=words[i++]
+                    t3=(words[i++] as NSString).doubleValue
+                    t4=(words[i++] as NSString).doubleValue
+                    i++
+                    num++
+                    self.wordCount++
+                    
+                    try self.dict.run(self.DictTable.insert(or: .Abort, self.wordID_c <- self.wordCount, self.wordName_c <- wordName, self.phono_c <- "a", self.trans_c <- "b", self.t1_c <- t1, self.t2_c <- t2, self.t3_c <- t3, self.t4_c <- t4, self.audioFile_c <- audioFileName ))
+                    wordsID.append(self.wordCount)
+                }
             }
-            
-            try db.run(BookTable.filter(id_c == id2).update(wordsCount_c <- num))
-            try db.run(BookTable.filter(id_c == id2).update(scanCount_c <- num))
+            try db.transaction{
+                for id in wordsID {
+                    try self.db.run(self.WordInfoTable.insert(or: .Abort, self.wordID_c <- id, self.listID_c <- self.listCount, self.level_c <- 0))
+                }
+            }
+            try db.run(ListTable.filter(listID_c == listCount).update(wordsCount_c <- num))
         }
         catch {
-            print("update Dict for \(textFile) error")
+            print("update Dict for \(textFileName) error")
         }
 
     }
     
     func initTables(){
-        createTableWords()
-        createTableBook()
-        createTableLists()
-        createTableLevel()
+        createTableDict()
+        createTableList()
+        createTableWordInfo()
         createTableConfig()
         createTableLink()
+        createTableScanList()
         do{
-            id2++
-            try db.run(BookTable.insert(or: .Abort, id_c <- id2, name_c <- "Scan List", wordsCount_c <- 0, scanCheck_c <- false, scanCount_c <- 0))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_minLevel", value_c <- 0 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_maxLevel", value_c <- 5 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoSpeak", value_c <- 0 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoTransSpeak", value_c <- 0 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoWordDisplay", value_c <- 1 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoTransDisplay", value_c <- 0 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "listen_reverse", value_c <- 0 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "listen_speed", value_c <- 1 ))
-            try db.run(ConfigTable.insert(or: .Abort, key_c <- "listen_interval", value_c <- 500 ))
+            try db.transaction{
+                let db = self.db
+                let ConfigTable = self.ConfigTable
+                let key_c = self.key_c
+                let value_c = self.value_c
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_minLevel", value_c <- 0 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_maxLevel", value_c <- 5 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_index", value_c <- 0 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_num", value_c <- 0 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoSpeak", value_c <- 0 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoTransSpeak", value_c <- 0 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoWordDisplay", value_c <- 1 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "scan_autoTransDisplay", value_c <- 0 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "listen_reverse", value_c <- 0 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "listen_speed", value_c <- 1 ))
+                try db.run(ConfigTable.insert(or: .Abort, key_c <- "listen_interval", value_c <- 500 ))
+            }
         }catch{
-            print("tables init error")
+            print("ConfigTable init error")
         }
     }
-    func createTableWords(){
+    func createTableDict(){
         do{
-            try dict.run(WordsTable.create(ifNotExists:true) { t in
-                t.column(id_c, primaryKey: true)
-                t.column(name_c,unique:false)
+            try dict.run(DictTable.create(ifNotExists:true) { t in
+                t.column(wordID_c, primaryKey: true)
+                t.column(wordName_c,unique:false)
                 t.column(phono_c, unique: false)
                 t.column(trans_c, unique: false)
                 t.column(t1_c, unique: false)
                 t.column(t2_c, unique: false)
                 t.column(t3_c, unique: false)
                 t.column(t4_c, unique: false)
-                t.column(audio_c, unique: false)
-                t.unique(name_c, t1_c, t2_c, trans_c)
+                t.column(audioFile_c, unique: false)
+                t.unique(wordName_c, t1_c, t2_c, audioFile_c, trans_c)
                 })
         }catch{
             print("create table:Dict failed")
@@ -368,43 +383,30 @@ class DB{
     }
 
     // the first list should be "scan"
-    func createTableBook(){
+    func createTableList(){
         do{
-            try db.run(BookTable.create(ifNotExists:true) { t in
-                t.column(id_c, primaryKey: true)
-                t.column(name_c,unique:true)
+            try db.run(ListTable.create(ifNotExists:true) { t in
+                t.column(listID_c, primaryKey: true)
+                t.column(listName_c,unique:true)
                 t.column(wordsCount_c, unique: false)
-                t.column(scanCheck_c, unique: false)
-                t.column(scanCount_c, unique:false)
+                t.column(check_c, unique: false)
                 })
         }catch{
-            print("create table: Book failed")
+            print("create table: List failed")
         }
     }
     
     
-    func createTableLists(){
+    func createTableWordInfo(){
         do{
-            try db.run(ListsTable.create(ifNotExists:true) { t in
-                t.column(id_c, primaryKey: true)
-                t.column(wordID_c,unique:false)
+            try db.run(WordInfoTable.create(ifNotExists:true) { t in
+                t.column(wordID_c, primaryKey: true)
                 t.column(listID_c, unique: false)
+                t.column(level_c,unique:false)
                 t.unique(wordID_c, listID_c)
                 })
         }catch{
             print("create table: Lists failed")
-        }
-    }
-    
-
-    func createTableLevel(){
-        do{
-            try db.run(LevelTable.create(ifNotExists:true) { t in
-                t.column(wordID_c, primaryKey: true)
-                t.column(level_c, unique: false)
-                })
-        }catch{
-            print("create table: Level failed")
         }
     }
     
@@ -421,14 +423,25 @@ class DB{
     func createTableLink(){
         do{
             try db.run(LinkTable.create(ifNotExists:true) { t in
-                t.column(id_c, primaryKey: true)
-                t.column(wordID_c, unique:false)
-                t.column(linkID_c, unique:false)
-                t.unique(wordID_c,linkID_c)
+                t.column(linkID_c, primaryKey: true)
+                t.column(wordID_c, unique: false)
+                t.column(linkWordID_c, unique:false)
                 })
         }catch{
             print("create table: Link failed")
         }
 
+    }
+    
+    func createTableScanList(){
+        do{
+            try db.run(ScanListTable.create(ifNotExists:true) { t in
+                t.column(scanID_c, primaryKey: true)
+                t.column(wordID_c, unique: true)
+                t.column(level_c, unique:false, defaultValue:0)
+                })
+        }catch{
+            print("create table: ScanList failed")
+        }
     }
 }

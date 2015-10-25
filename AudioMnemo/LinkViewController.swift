@@ -8,66 +8,65 @@
 
 import UIKit
 
-class LinkViewController: UITableViewController,UISearchBarDelegate, UISearchDisplayDelegate {
+class LinkViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate, UISearchDisplayDelegate {
+    
+    
+    
+    @IBOutlet var tableView: UITableView!
+    
     var word: Word!
     var am: AudioMnemo!
-    var words: [Word]!
+    var wordsID: [Int]!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         am=(UIApplication.sharedApplication().delegate as! AppDelegate).am
-        words = [Word]()
-        for id in word.linksID {
-            words.append(am.words[id])
-        }
+        wordsID = Array(word.linksID)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return words.count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return wordsID.count
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let wordID = indexPath.row
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let wordID = wordsID[indexPath.row]
         let cell =  tableView.dequeueReusableCellWithIdentifier("searchWordCell")!
-        cell.textLabel?.text = words[wordID].name
-        if word.linksID.contains(words[wordID].id) {
-        cell.accessoryType = .Checkmark
+        cell.textLabel?.text = am.db.readWordName(wordID)
+        if word.linksID.contains(wordID) {
+            cell.accessoryType = .Checkmark
         }else{
             cell.accessoryType = .None
         }
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tableView.cellForRowAtIndexPath(indexPath)!
         if cell.accessoryType == .None {
             cell.accessoryType = .Checkmark
-            am.addlink(word.id, with: words[indexPath.row].id)
+            word.linksID.insert(wordsID[indexPath.row])
+            am.db.addLink(word.id, with: wordsID[indexPath.row])
         }else{
             cell.accessoryType = .None
-            am.cutLink(word.id, with: words[indexPath.row].id)
+            word.linksID.remove(wordsID[indexPath.row])
+            am.db.cutLink(word.id, with: wordsID[indexPath.row])
         }
     }
     
      func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        words.removeAll()
-        for linkWord in am.words {
-            if linkWord.name == nil {
-                continue
-            }
-            if linkWord.name.hasPrefix(searchText) && linkWord.name != word.name {
-                words.append(linkWord)
-            }
-        }
+        wordsID.removeAll()
+        wordsID = am.db.searchWordsMatchPattern("\(searchText)%", exceptFor: word.name)
         self.tableView.reloadData()
     }
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.endEditing(true)
-        self.dismissViewControllerAnimated(false, completion: nil)
+//        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
 }

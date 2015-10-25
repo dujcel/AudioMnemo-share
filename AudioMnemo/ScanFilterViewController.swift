@@ -19,34 +19,36 @@ class ScanFilterViewController: UITableViewController{
     
     let pickerValues = ["0", "1", "2", "3", "4", "5"]
     
+    var lists:[List]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         am = (UIApplication.sharedApplication().delegate as! AppDelegate).am
+        lists = am.db.readLists()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool) {
+        am.db.updateScanList(am.db.readConfig("scan_minLevel")!, maxLevel: am.db.readConfig("scan_maxLevel")!)
     }
     
     override func viewDidAppear(animated: Bool) {
     }
     
     override func viewDidDisappear(animated: Bool) {
-        am.updateScanList()
+        
     }
    
      // UITextFieldDelegate Methods
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0){
             return 2
-        }else if section == 1{
-            return 1
         }
-        else if(section == 2){
-            return am.lists.count - 1
+        else if(section == 1){
+            return lists.count
         }else{
             return 0
         }
@@ -68,35 +70,29 @@ class ScanFilterViewController: UITableViewController{
             
             if(indexPath.section == 0){
                 let cell =  tableView.dequeueReusableCellWithIdentifier("filterCell") as! PickerCell
+                cell.textLabel?.enabled = false
                 cell.vc = self
                 if(indexPath.row == 0 ){
                     cell.level.text = "Min Level"
-                    let minLevel = am.config["scan_minLevel"]!
+                    let minLevel = am.db.readConfig("scan_minLevel")!
                     cell.value.text = "\(minLevel)"
                     cell.stepper.value = (Double)(minLevel)
                 }else{
                     cell.level.text = "Max Level"
-                    let maxLevel = am.config["scan_maxLevel"]!
+                    let maxLevel = am.db.readConfig("scan_maxLevel")!
                     cell.value.text = "\(maxLevel)"
                     cell.stepper.value = (Double)(maxLevel)
                 }
                 return cell
             }else{
-                let id :Int = indexPath.row + indexPath.section - 1
-                let cell =  tableView.dequeueReusableCellWithIdentifier("listCell")!
-                cell.textLabel!.text = am.lists[id].name
-                
-                if indexPath.section == 1 {
-                    cell.detailTextLabel!.text = "\(am.lists[0].wordsCount)"
-                }else{
-                
-                if am.lists[id].scanCheck == true {
+                let id :Int = indexPath.row
+                let cell =  tableView.dequeueReusableCellWithIdentifier("twoLabelsCell") as! TwoLabelsCell
+                cell.nameLabel.text = lists[id].name
+                cell.valueLabel.text = "\(lists[id].wordsCount)"
+                if lists[id].check == true {
                     cell.accessoryType = .Checkmark
-                    cell.detailTextLabel!.text = "\(am.lists[id].scanCount)"
                 }else{
                     cell.accessoryType = .None
-                    cell.detailTextLabel!.text = ""
-                }
                 }
                 return cell
             }
@@ -108,24 +104,21 @@ class ScanFilterViewController: UITableViewController{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        if indexPath.section == 2 {
-            let id = indexPath.row + 1
+        if indexPath.section == 1 {
+            let row = indexPath.row
             if let cell = tableView.cellForRowAtIndexPath(indexPath)  {
                 if cell.accessoryType == .Checkmark
                 {
-                    am.lists[0].wordsCount -= am.lists[id].scanCount
-                    am.lists[id].scanCheck = false
                     cell.accessoryType = .None
-                    cell.detailTextLabel!.text = ""
+                    lists[indexPath.row].check = false
+                    am.db.updateListCheck(lists[row].id, check: false)
                 }
                 else
                 {
-                    am.lists[0].wordsCount += am.lists[id].scanCount
-                    am.lists[id].scanCheck = true
                     cell.accessoryType = .Checkmark
-                    cell.detailTextLabel!.text = "\(am.lists[id].scanCount)"
+                    lists[indexPath.row].check = true
+                    am.db.updateListCheck(lists[row].id, check: true)
                 }
-                tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.None)
             }
         }
     }
@@ -134,24 +127,21 @@ class ScanFilterViewController: UITableViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func updateAggregates(){
-        am.updateListsForLevels()
-        tableView.reloadData()
-    }
     
+}
+class TwoLabelsCell: UITableViewCell{
     
+    @IBOutlet var nameLabel: UILabel!
+    
+    @IBOutlet var valueLabel: UILabel!
 }
 
 class PickerCell: UITableViewCell{
     
     
     @IBOutlet var level: UILabel!
-    
     @IBOutlet var value: UITextField!
-    
     @IBOutlet var stepper: UIStepper!
-    
     
     var vc: ScanFilterViewController!
     
@@ -163,13 +153,12 @@ class PickerCell: UITableViewCell{
     @IBAction func valueChanged(sender: UITextField) {
         if let l = (Int)(value.text!) {
             if( level.text == "Min Level"){
-                vc.am.config["scan_minLevel"] = l
+                vc.am.db.updateConfig("scan_minLevel", with:l)
                 print("minLevel is changed to \(l)")
             }else{
-                vc.am.config["scan_maxLevel"] = l
+                vc.am.db.updateConfig("scan_maxLevel", with:l)
                 print("maxLevel is changed to \(l)")
             }
-            vc.updateAggregates()
         }
     }
 }

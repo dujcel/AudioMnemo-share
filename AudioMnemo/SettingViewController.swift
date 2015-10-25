@@ -36,18 +36,18 @@ class SettingViewController: UITableViewController{
         super.viewDidLoad()
         am = (UIApplication.sharedApplication().delegate as! AppDelegate).am
         db = am.db
-        autoSpeakSW.setOn(am.config["scan_autoSpeak"]! == 1, animated: false)
-        autoTransSpeakSW.setOn(am.config["scan_autoTransSpeak"]! == 1, animated: false)
-        autoWordDisplaySW.setOn(am.config["scan_autoWordDisplay"]! == 1, animated: false)
-        autoTransDisplaySW.setOn(am.config["scan_autoTransDisplay"]! == 1, animated: false)
-        reverseSW.setOn(am.config["listen_reverse"]! == 1, animated: false)
+        autoSpeakSW.setOn(am.db.readConfig("scan_autoSpeak")! == 1, animated: false)
+        autoTransSpeakSW.setOn(am.db.readConfig("scan_autoTransSpeak")! == 1, animated: false)
+        autoWordDisplaySW.setOn(am.db.readConfig("scan_autoWordDisplay")! == 1, animated: false)
+        autoTransDisplaySW.setOn(am.db.readConfig("scan_autoTransDisplay")! == 1, animated: false)
+        reverseSW.setOn(am.db.readConfig("listen_reverse")! == 1, animated: false)
         
         self.navigationController?.navigationBar.translucent = false
         
     }
     
     override func viewWillAppear(animated: Bool) {
-        let scanNum = am.lists[0].wordsCount
+        let scanNum = am.db.readConfig("scan_num")!
         scanNumLabel.text = "\(scanNum)"
         
     }
@@ -126,32 +126,32 @@ class SettingViewController: UITableViewController{
     
     @IBAction func didSwitchAutoSpeak(sender: UISwitch) {
         if autoSpeakSW.on {
-            am.config["scan_autoSpeak"] = 1
+            am.db.updateConfig("scan_autoSpeak",with: 1)
         }else{
-            am.config["scan_autoSpeak"] = 0
+            am.db.updateConfig("scan_autoSpeak",with: 0)
         }
     }
     @IBAction func didSwitchAutoTransSpeak(sender: UISwitch) {
         if autoTransSpeakSW.on {
-            am.config["scan_autoTransSpeak"] = 1
+            am.db.updateConfig("scan_autoTransSpeak",with: 1)
         }else{
-            am.config["scan_autoTransSpeak"] = 0
+            am.db.updateConfig("scan_autoTransSpeak",with: 0)
         }
     }
     
     @IBAction func disSwitchAutoDisplayWord(sender: UISwitch) {
         if autoWordDisplaySW.on {
-            am.config["scan_autoWordDisplay"] = 1
+            am.db.updateConfig("scan_autoWordDisplay",with: 1)
         }else{
-            am.config["scan_autoWordDisplay"] = 0
+            am.db.updateConfig("scan_autoWordDisplay",with: 0)
         }
     }
     
     @IBAction func didSwitchAutoDisplayTrans(sender: UISwitch) {
         if autoTransDisplaySW.on {
-            am.config["scan_autoTransDisplay"] = 1
+            am.db.updateConfig("scan_autoTransDisplay", with: 1)
         }else{
-            am.config["scan_autoTransDisplay"] = 0
+            am.db.updateConfig("scan_autoTransDisplay", with: 0)
         }
     }
     
@@ -159,10 +159,9 @@ class SettingViewController: UITableViewController{
     @IBAction func intervalSet(sender: UITextField) {
         var interval:Int? = (Int)(sender.text!)
         if  interval != nil{
-            am.config["listen_interval"]! = interval!
             am.db.updateConfig("listen_interval", with: interval!)
         }else{
-            interval = am.config["listen_interval"]!
+            interval = am.db.readConfig("listen_interval")!
             sender.text = "\(interval)"
         }
         
@@ -170,9 +169,9 @@ class SettingViewController: UITableViewController{
     
     @IBAction func didSwitchReverse(sender: UISwitch) {
         if reverseSW.on {
-            am.config["listen_reverse"] = 1
+            am.db.updateConfig("listen_reverse", with: 1)
         }else{
-            am.config["listen_reverse"] = 0
+            am.db.updateConfig("listen_reverse", with: 1)
         }
     }
     

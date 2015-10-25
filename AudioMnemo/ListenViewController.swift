@@ -43,7 +43,7 @@ class ListenViewController: UIViewController, UITableViewDataSource, UITableView
         actIndicator.hidden = true
         actIndicator.hidesWhenStopped = true
         
-        speedIndex = am.config["listen_speed"]!
+        speedIndex = am.db.readConfig("listen_speed")!
         
     }
 
@@ -142,12 +142,13 @@ class ListenViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return am.lists[0].wordsID.count
+        return am.db.readConfig("scan_num")!
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let wordID :Int = am.lists[0].wordsID[indexPath.row]
+        let word = am.db.readScanWord(indexPath.row + 1)!
         let cell =  tableView.dequeueReusableCellWithIdentifier("listenWordCell")!
-        cell.textLabel?.text = am.words[wordID].name
+        cell.textLabel?.text = word.name
+        cell.detailTextLabel?.text = "\(word.level)"
         return cell
     }
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {

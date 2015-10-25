@@ -14,7 +14,7 @@
 		A63331BA1BC63E5C0050FF6F /* AudioMnemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AD1BC63E5C0050FF6F /* AudioMnemo.swift */; settings = {ASSET_TAGS = (); }; };
 		A63331BB1BC63E5C0050FF6F /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AE1BC63E5C0050FF6F /* DB.swift */; settings = {ASSET_TAGS = (); }; };
 		A63331BC1BC63E5C0050FF6F /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BE1BC63E5C0050FF6F /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B11BC63E5C0050FF6F /* ListsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A63331BE1BC63E5C0050FF6F /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B11BC63E5C0050FF6F /* DictionaryViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A63331BF1BC63E5C0050FF6F /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B21BC63E5C0050FF6F /* ListenViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A63331C01BC63E5C0050FF6F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B31BC63E5C0050FF6F /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A63331C31BC63E5C0050FF6F /* GRE 32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */; settings = {ASSET_TAGS = (); }; };
@@ -27,7 +27,7 @@
 		A648B9651BC8EA99004210C1 /* ScanFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A648B9691BCA3BAD004210C1 /* GRE 30.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A648B9681BCA3BAD004210C1 /* GRE 30.TXT */; settings = {ASSET_TAGS = (); }; };
 		A648B96B1BCA3BBC004210C1 /* GRE 30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A648B96F1BCE529D004210C1 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B96E1BCE529D004210C1 /* WordsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A648B96F1BCE529D004210C1 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B96E1BCE529D004210C1 /* WordViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A672645A1BC63D6600CE6E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67264581BC63D6600CE6E6F /* LaunchScreen.storyboard */; };
 		A69DBAFC1BD87F000072CEFA /* GRE 23.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF71BD87F000072CEFA /* GRE 23.TXT */; settings = {ASSET_TAGS = (); }; };
 		A69DBAFD1BD87F000072CEFA /* GRE 24.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF81BD87F000072CEFA /* GRE 24.TXT */; settings = {ASSET_TAGS = (); }; };
@@ -76,7 +76,7 @@
 		A63331AD1BC63E5C0050FF6F /* AudioMnemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioMnemo.swift; sourceTree = "<group>"; };
 		A63331AE1BC63E5C0050FF6F /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		A63331B11BC63E5C0050FF6F /* ListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		A63331B11BC63E5C0050FF6F /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		A63331B21BC63E5C0050FF6F /* ListenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenViewController.swift; sourceTree = "<group>"; };
 		A63331B31BC63E5C0050FF6F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 32.mp3"; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanFilterViewController.swift; sourceTree = "<group>"; };
 		A648B9681BCA3BAD004210C1 /* GRE 30.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 30.TXT"; sourceTree = "<group>"; };
 		A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 30.mp3"; sourceTree = "<group>"; };
-		A648B96E1BCE529D004210C1 /* WordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
+		A648B96E1BCE529D004210C1 /* WordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		A672644A1BC63D6600CE6E6F /* AudioMnemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioMnemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67264591BC63D6600CE6E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A672645B1BC63D6600CE6E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -179,8 +179,8 @@
 				A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */,
 				A63331B21BC63E5C0050FF6F /* ListenViewController.swift */,
 				A69DBB2C1BDA15760072CEFA /* SpeedViewController.swift */,
-				A63331B11BC63E5C0050FF6F /* ListsViewController.swift */,
-				A648B96E1BCE529D004210C1 /* WordsViewController.swift */,
+				A63331B11BC63E5C0050FF6F /* DictionaryViewController.swift */,
+				A648B96E1BCE529D004210C1 /* WordViewController.swift */,
 				A63331B31BC63E5C0050FF6F /* SettingViewController.swift */,
 				A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */,
 				A648B9621BC8E77A004210C1 /* HelpViewController.swift */,
@@ -416,8 +416,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63331BE1BC63E5C0050FF6F /* ListsViewController.swift in Sources */,
-				A648B96F1BCE529D004210C1 /* WordsViewController.swift in Sources */,
+				A63331BE1BC63E5C0050FF6F /* DictionaryViewController.swift in Sources */,
+				A648B96F1BCE529D004210C1 /* WordViewController.swift in Sources */,
 				A63331BC1BC63E5C0050FF6F /* ScanViewController.swift in Sources */,
 				A63331B91BC63E5C0050FF6F /* Audio.swift in Sources */,
 				A648B9651BC8EA99004210C1 /* ScanFilterViewController.swift in Sources */,

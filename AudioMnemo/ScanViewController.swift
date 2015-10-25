@@ -38,6 +38,9 @@ class ScanViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        index = am.db.readConfig("scan_index")!
+        num = am.db.readConfig("scan_num")!
+        word = am.db.readScanWord(index)
         updateView()
         self.navigationItem.rightBarButtonItem?.enabled = (word != nil)
 
@@ -66,53 +69,49 @@ class ScanViewController: UIViewController {
     }
     
     func nextWord() {
-        am.scanNextWord()
+        if index < num{
+            index++
+            am.db.updateConfig("scan_index", with: index)
+        }
+        word = am.db.readScanWord(index)
         updateView()
     }
     
     func lastWord() {
-        am.scanLastWord()
+        if index > 1{
+           index--
+            am.db.updateConfig("scan_index", with: index)
+        }
+        word = am.db.readScanWord(index)
         updateView()
     }
     
     func updateView(){
-        
-        
-        num = am.lists[0].wordsCount
-        index = am.lists[0].scanCount
-        
-        if num > 0 && index >= 0 && index < num{
-            let wordID = am.lists[0].wordsID[index]
-            word = am.words[wordID]
-            if am.config["scan_autoWordDisplay"]! == 1{
-            wordLabel.text = word.name
+        self.navigationItem.title = "\(index)/\(num)"
+        if word != nil{
+            if am.db.readConfig("scan_autoWordDisplay")! == 1{
+                wordLabel.text = word.name
             }else{
                 wordLabel.text = "Tap me"
             }
             contentText.text = ""
+            for id in word.linksID {
+                contentText.text.appendContentsOf("\(am.db.readWordName(id)!)   ")
+            }
+            audio.clearSounds()
+            if(am.db.readConfig("scan_autoSpeak")! == 1){
+                let sound1 = Sound(startTime: word.audioTime1, endTime: word.audioTime2, audioFile: word.audioFile)
+                audio.addSounds([sound1], clear: false)
+            }
+            if(am.db.readConfig("scan_autoTransSpeak")! == 1){
+                let sound2 = Sound(startTime: word.audioTime3, endTime: word.audioTime4, audioFile: word.audioFile)
+                audio.addSounds([sound2], clear: false)
+            }
         }else{
             word = nil
             wordLabel.text = ""
             contentText.text = "Empty list, Please add words to ScanList in Setting View"
         }
-        self.navigationItem.title = "\(index + 1)/\(num)"
-        
-        if word == nil{
-            return
-        }
-        for id in word.linksID {
-        contentText.text.appendContentsOf("\(am.words[id].name)   ")
-        }
-        audio.clearSounds()
-        if(am.config["scan_autoSpeak"] == 1){
-            let sound1 = Sound(startTime: word.audioTime1, endTime: word.audioTime2, audioFile: word.audioFile)
-            audio.addSounds([sound1], clear: false)
-        }
-        if(am.config["scan_autoTransSpeak"] == 1){
-            let sound2 = Sound(startTime: word.audioTime3, endTime: word.audioTime4, audioFile: word.audioFile)
-            audio.addSounds([sound2], clear: false)
-        }
-        
     }
     @IBAction func didSwipeRight(sender: UISwipeGestureRecognizer) {
         lastWord()
