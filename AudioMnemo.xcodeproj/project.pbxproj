@@ -8,68 +8,115 @@
 
 /* Begin PBXBuildFile section */
 		831A2842346EE36070F3D9D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512A5128AAB804AE5FACE58F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A63331B71BC63E5C0050FF6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AA1BC63E5C0050FF6F /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331B81BC63E5C0050FF6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63331AB1BC63E5C0050FF6F /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		A63331B91BC63E5C0050FF6F /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AC1BC63E5C0050FF6F /* Audio.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BA1BC63E5C0050FF6F /* AudioMnemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AD1BC63E5C0050FF6F /* AudioMnemo.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BB1BC63E5C0050FF6F /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AE1BC63E5C0050FF6F /* DB.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BC1BC63E5C0050FF6F /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BE1BC63E5C0050FF6F /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B11BC63E5C0050FF6F /* DictionaryViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331BF1BC63E5C0050FF6F /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B21BC63E5C0050FF6F /* ListenViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331C01BC63E5C0050FF6F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B31BC63E5C0050FF6F /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A63331C31BC63E5C0050FF6F /* GRE 32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A63331C51BC63E700050FF6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63331C41BC63E700050FF6F /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		A63331CD1BC67A420050FF6F /* Dict.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = A63331CC1BC67A420050FF6F /* Dict.sqlite3 */; settings = {ASSET_TAGS = (); }; };
-		A648B95E1BC7AAC0004210C1 /* GRE 31.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A648B95C1BC7AAC0004210C1 /* GRE 31.TXT */; settings = {ASSET_TAGS = (); }; };
-		A648B95F1BC7AAC0004210C1 /* GRE 32.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A648B95D1BC7AAC0004210C1 /* GRE 32.TXT */; settings = {ASSET_TAGS = (); }; };
-		A648B9611BC7AADF004210C1 /* GRE 31.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A648B9601BC7AADF004210C1 /* GRE 31.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A648B9631BC8E77A004210C1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B9621BC8E77A004210C1 /* HelpViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A648B9651BC8EA99004210C1 /* ScanFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A648B9691BCA3BAD004210C1 /* GRE 30.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A648B9681BCA3BAD004210C1 /* GRE 30.TXT */; settings = {ASSET_TAGS = (); }; };
-		A648B96B1BCA3BBC004210C1 /* GRE 30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A648B96F1BCE529D004210C1 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B96E1BCE529D004210C1 /* WordViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A6099F0C1BE64942006BF3D9 /* GRE 23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EF81BE64942006BF3D9 /* GRE 23.mp3 */; };
+		A6099F0D1BE64942006BF3D9 /* GRE 24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EF91BE64942006BF3D9 /* GRE 24.mp3 */; };
+		A6099F0E1BE64942006BF3D9 /* GRE 25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EFA1BE64942006BF3D9 /* GRE 25.mp3 */; };
+		A6099F0F1BE64942006BF3D9 /* GRE 26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EFB1BE64942006BF3D9 /* GRE 26.mp3 */; };
+		A6099F101BE64942006BF3D9 /* GRE 27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EFC1BE64942006BF3D9 /* GRE 27.mp3 */; };
+		A6099F111BE64942006BF3D9 /* GRE 28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EFD1BE64942006BF3D9 /* GRE 28.mp3 */; };
+		A6099F121BE64942006BF3D9 /* GRE 29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EFE1BE64942006BF3D9 /* GRE 29.mp3 */; };
+		A6099F131BE64942006BF3D9 /* GRE 30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EFF1BE64942006BF3D9 /* GRE 30.mp3 */; };
+		A6099F141BE64942006BF3D9 /* GRE 31.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F001BE64942006BF3D9 /* GRE 31.mp3 */; };
+		A6099F151BE64942006BF3D9 /* GRE 32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F011BE64942006BF3D9 /* GRE 32.mp3 */; };
+		A6099F161BE64942006BF3D9 /* GRE 33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F021BE64942006BF3D9 /* GRE 33.mp3 */; };
+		A6099F171BE64942006BF3D9 /* GRE 34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F031BE64942006BF3D9 /* GRE 34.mp3 */; };
+		A6099F181BE64942006BF3D9 /* GRE 35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F041BE64942006BF3D9 /* GRE 35.mp3 */; };
+		A6099F191BE64942006BF3D9 /* GRE 36.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F051BE64942006BF3D9 /* GRE 36.mp3 */; };
+		A6099F1A1BE64942006BF3D9 /* GRE 37.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F061BE64942006BF3D9 /* GRE 37.mp3 */; };
+		A6099F1B1BE64942006BF3D9 /* GRE 38.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F071BE64942006BF3D9 /* GRE 38.mp3 */; };
+		A6099F1C1BE64942006BF3D9 /* GRE 39.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F081BE64942006BF3D9 /* GRE 39.mp3 */; };
+		A6099F1D1BE64942006BF3D9 /* GRE 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F091BE64942006BF3D9 /* GRE 40.mp3 */; };
+		A6099F1E1BE64942006BF3D9 /* GRE 41.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F0A1BE64942006BF3D9 /* GRE 41.mp3 */; };
+		A6099F1F1BE64942006BF3D9 /* GRE 42.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F0B1BE64942006BF3D9 /* GRE 42.mp3 */; };
+		A6099F361BE6495B006BF3D9 /* GRE 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F201BE6495B006BF3D9 /* GRE 01.mp3 */; };
+		A6099F371BE6495B006BF3D9 /* GRE 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F211BE6495B006BF3D9 /* GRE 02.mp3 */; };
+		A6099F381BE6495B006BF3D9 /* GRE 03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F221BE6495B006BF3D9 /* GRE 03.mp3 */; };
+		A6099F391BE6495B006BF3D9 /* GRE 04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F231BE6495B006BF3D9 /* GRE 04.mp3 */; };
+		A6099F3A1BE6495B006BF3D9 /* GRE 05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F241BE6495B006BF3D9 /* GRE 05.mp3 */; };
+		A6099F3B1BE6495B006BF3D9 /* GRE 06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F251BE6495B006BF3D9 /* GRE 06.mp3 */; };
+		A6099F3C1BE6495B006BF3D9 /* GRE 07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F261BE6495B006BF3D9 /* GRE 07.mp3 */; };
+		A6099F3D1BE6495B006BF3D9 /* GRE 08.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F271BE6495B006BF3D9 /* GRE 08.mp3 */; };
+		A6099F3E1BE6495B006BF3D9 /* GRE 09.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F281BE6495B006BF3D9 /* GRE 09.mp3 */; };
+		A6099F3F1BE6495B006BF3D9 /* GRE 10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F291BE6495B006BF3D9 /* GRE 10.mp3 */; };
+		A6099F401BE6495B006BF3D9 /* GRE 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F2A1BE6495B006BF3D9 /* GRE 11.mp3 */; };
+		A6099F411BE6495B006BF3D9 /* GRE 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F2B1BE6495B006BF3D9 /* GRE 12.mp3 */; };
+		A6099F421BE6495B006BF3D9 /* GRE 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F2C1BE6495B006BF3D9 /* GRE 13.mp3 */; };
+		A6099F431BE6495B006BF3D9 /* GRE 14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F2D1BE6495B006BF3D9 /* GRE 14.mp3 */; };
+		A6099F441BE6495B006BF3D9 /* GRE 15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F2E1BE6495B006BF3D9 /* GRE 15.mp3 */; };
+		A6099F451BE6495B006BF3D9 /* GRE 16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F2F1BE6495B006BF3D9 /* GRE 16.mp3 */; };
+		A6099F461BE6495B006BF3D9 /* GRE 17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F301BE6495B006BF3D9 /* GRE 17.mp3 */; };
+		A6099F471BE6495B006BF3D9 /* GRE 18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F311BE6495B006BF3D9 /* GRE 18.mp3 */; };
+		A6099F481BE6495B006BF3D9 /* GRE 19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F321BE6495B006BF3D9 /* GRE 19.mp3 */; };
+		A6099F491BE6495B006BF3D9 /* GRE 20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F331BE6495B006BF3D9 /* GRE 20.mp3 */; };
+		A6099F4A1BE6495B006BF3D9 /* GRE 21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F341BE6495B006BF3D9 /* GRE 21.mp3 */; };
+		A6099F4B1BE6495B006BF3D9 /* GRE 22.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F351BE6495B006BF3D9 /* GRE 22.mp3 */; };
+		A6099F521BE661FB006BF3D9 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F501BE661FB006BF3D9 /* db.sqlite3 */; };
+		A6099F531BE661FB006BF3D9 /* Dict.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099F511BE661FB006BF3D9 /* Dict.sqlite3 */; };
+		A63331B71BC63E5C0050FF6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AA1BC63E5C0050FF6F /* AppDelegate.swift */; };
+		A63331B81BC63E5C0050FF6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63331AB1BC63E5C0050FF6F /* Assets.xcassets */; };
+		A63331B91BC63E5C0050FF6F /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AC1BC63E5C0050FF6F /* Audio.swift */; };
+		A63331BA1BC63E5C0050FF6F /* AudioMnemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AD1BC63E5C0050FF6F /* AudioMnemo.swift */; };
+		A63331BB1BC63E5C0050FF6F /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AE1BC63E5C0050FF6F /* DB.swift */; };
+		A63331BC1BC63E5C0050FF6F /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331AF1BC63E5C0050FF6F /* ScanViewController.swift */; };
+		A63331BE1BC63E5C0050FF6F /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B11BC63E5C0050FF6F /* DictionaryViewController.swift */; };
+		A63331BF1BC63E5C0050FF6F /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B21BC63E5C0050FF6F /* ListenViewController.swift */; };
+		A63331C01BC63E5C0050FF6F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63331B31BC63E5C0050FF6F /* SettingViewController.swift */; };
+		A63331C51BC63E700050FF6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63331C41BC63E700050FF6F /* Main.storyboard */; };
+		A648B9631BC8E77A004210C1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B9621BC8E77A004210C1 /* HelpViewController.swift */; };
+		A648B9651BC8EA99004210C1 /* ScanFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */; };
+		A648B96F1BCE529D004210C1 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648B96E1BCE529D004210C1 /* WordViewController.swift */; };
 		A672645A1BC63D6600CE6E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67264581BC63D6600CE6E6F /* LaunchScreen.storyboard */; };
-		A69DBAFC1BD87F000072CEFA /* GRE 23.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF71BD87F000072CEFA /* GRE 23.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBAFD1BD87F000072CEFA /* GRE 24.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF81BD87F000072CEFA /* GRE 24.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBAFE1BD87F000072CEFA /* GRE 25.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAF91BD87F000072CEFA /* GRE 25.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBAFF1BD87F000072CEFA /* GRE 26.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAFA1BD87F000072CEFA /* GRE 26.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB001BD87F000072CEFA /* GRE 27.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBAFB1BD87F000072CEFA /* GRE 27.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB061BD87F160072CEFA /* GRE 23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB011BD87F160072CEFA /* GRE 23.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB071BD87F160072CEFA /* GRE 24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB021BD87F160072CEFA /* GRE 24.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB081BD87F160072CEFA /* GRE 25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB031BD87F160072CEFA /* GRE 25.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB091BD87F160072CEFA /* GRE 26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB041BD87F160072CEFA /* GRE 26.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB0A1BD87F160072CEFA /* GRE 27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB051BD87F160072CEFA /* GRE 27.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB141BD94D6A0072CEFA /* GRE 33.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0C1BD94D6A0072CEFA /* GRE 33.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB151BD94D6A0072CEFA /* GRE 34.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0D1BD94D6A0072CEFA /* GRE 34.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB161BD94D6A0072CEFA /* GRE 35.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0E1BD94D6A0072CEFA /* GRE 35.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB171BD94D6A0072CEFA /* GRE 36.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB0F1BD94D6A0072CEFA /* GRE 36.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB181BD94D6A0072CEFA /* GRE 37.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB101BD94D6A0072CEFA /* GRE 37.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB191BD94D6A0072CEFA /* GRE 38.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB111BD94D6A0072CEFA /* GRE 38.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB1A1BD94D6A0072CEFA /* GRE 39.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB121BD94D6A0072CEFA /* GRE 39.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB1B1BD94D6A0072CEFA /* GRE 40.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB131BD94D6A0072CEFA /* GRE 40.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB241BD94DA50072CEFA /* GRE 33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1C1BD94DA50072CEFA /* GRE 33.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB251BD94DA50072CEFA /* GRE 34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1D1BD94DA50072CEFA /* GRE 34.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB261BD94DA50072CEFA /* GRE 35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1E1BD94DA50072CEFA /* GRE 35.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB271BD94DA50072CEFA /* GRE 36.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB1F1BD94DA50072CEFA /* GRE 36.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB281BD94DA50072CEFA /* GRE 37.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB201BD94DA50072CEFA /* GRE 37.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB291BD94DA50072CEFA /* GRE 38.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB211BD94DA50072CEFA /* GRE 38.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB2A1BD94DA50072CEFA /* GRE 39.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB221BD94DA50072CEFA /* GRE 39.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB2B1BD94DA50072CEFA /* GRE 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB231BD94DA50072CEFA /* GRE 40.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB2D1BDA15760072CEFA /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DBB2C1BDA15760072CEFA /* SpeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A69DBB301BDA7A780072CEFA /* GRE 41.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB2E1BDA7A780072CEFA /* GRE 41.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB311BDA7A780072CEFA /* GRE 42.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB2F1BDA7A780072CEFA /* GRE 42.TXT */; settings = {ASSET_TAGS = (); }; };
-		A69DBB341BDA7A920072CEFA /* GRE 41.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB321BDA7A920072CEFA /* GRE 41.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A69DBB351BDA7A920072CEFA /* GRE 42.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A69DBB331BDA7A920072CEFA /* GRE 42.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A6D13B401BD67744000B429E /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D13B3F1BD67744000B429E /* LinkViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A6E5240C1BD3D8EF0045E291 /* GRE 28.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240A1BD3D8EF0045E291 /* GRE 28.TXT */; settings = {ASSET_TAGS = (); }; };
-		A6E5240D1BD3D8EF0045E291 /* GRE 29.TXT in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240B1BD3D8EF0045E291 /* GRE 29.TXT */; settings = {ASSET_TAGS = (); }; };
-		A6E524101BD3D90F0045E291 /* GRE 28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240E1BD3D90F0045E291 /* GRE 28.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A6E524111BD3D90F0045E291 /* GRE 29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6E5240F1BD3D90F0045E291 /* GRE 29.mp3 */; settings = {ASSET_TAGS = (); }; };
+		A69DBB2D1BDA15760072CEFA /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DBB2C1BDA15760072CEFA /* SpeedViewController.swift */; };
+		A6D13B401BD67744000B429E /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D13B3F1BD67744000B429E /* LinkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23FED6346BB2948C1D3AFED2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		512A5128AAB804AE5FACE58F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6099EF81BE64942006BF3D9 /* GRE 23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 23.mp3"; sourceTree = "<group>"; };
+		A6099EF91BE64942006BF3D9 /* GRE 24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 24.mp3"; sourceTree = "<group>"; };
+		A6099EFA1BE64942006BF3D9 /* GRE 25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 25.mp3"; sourceTree = "<group>"; };
+		A6099EFB1BE64942006BF3D9 /* GRE 26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 26.mp3"; sourceTree = "<group>"; };
+		A6099EFC1BE64942006BF3D9 /* GRE 27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 27.mp3"; sourceTree = "<group>"; };
+		A6099EFD1BE64942006BF3D9 /* GRE 28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 28.mp3"; sourceTree = "<group>"; };
+		A6099EFE1BE64942006BF3D9 /* GRE 29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 29.mp3"; sourceTree = "<group>"; };
+		A6099EFF1BE64942006BF3D9 /* GRE 30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 30.mp3"; sourceTree = "<group>"; };
+		A6099F001BE64942006BF3D9 /* GRE 31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 31.mp3"; sourceTree = "<group>"; };
+		A6099F011BE64942006BF3D9 /* GRE 32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 32.mp3"; sourceTree = "<group>"; };
+		A6099F021BE64942006BF3D9 /* GRE 33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 33.mp3"; sourceTree = "<group>"; };
+		A6099F031BE64942006BF3D9 /* GRE 34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 34.mp3"; sourceTree = "<group>"; };
+		A6099F041BE64942006BF3D9 /* GRE 35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 35.mp3"; sourceTree = "<group>"; };
+		A6099F051BE64942006BF3D9 /* GRE 36.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 36.mp3"; sourceTree = "<group>"; };
+		A6099F061BE64942006BF3D9 /* GRE 37.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 37.mp3"; sourceTree = "<group>"; };
+		A6099F071BE64942006BF3D9 /* GRE 38.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 38.mp3"; sourceTree = "<group>"; };
+		A6099F081BE64942006BF3D9 /* GRE 39.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 39.mp3"; sourceTree = "<group>"; };
+		A6099F091BE64942006BF3D9 /* GRE 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 40.mp3"; sourceTree = "<group>"; };
+		A6099F0A1BE64942006BF3D9 /* GRE 41.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 41.mp3"; sourceTree = "<group>"; };
+		A6099F0B1BE64942006BF3D9 /* GRE 42.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 42.mp3"; sourceTree = "<group>"; };
+		A6099F201BE6495B006BF3D9 /* GRE 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 01.mp3"; sourceTree = "<group>"; };
+		A6099F211BE6495B006BF3D9 /* GRE 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 02.mp3"; sourceTree = "<group>"; };
+		A6099F221BE6495B006BF3D9 /* GRE 03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 03.mp3"; sourceTree = "<group>"; };
+		A6099F231BE6495B006BF3D9 /* GRE 04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 04.mp3"; sourceTree = "<group>"; };
+		A6099F241BE6495B006BF3D9 /* GRE 05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 05.mp3"; sourceTree = "<group>"; };
+		A6099F251BE6495B006BF3D9 /* GRE 06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 06.mp3"; sourceTree = "<group>"; };
+		A6099F261BE6495B006BF3D9 /* GRE 07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 07.mp3"; sourceTree = "<group>"; };
+		A6099F271BE6495B006BF3D9 /* GRE 08.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 08.mp3"; sourceTree = "<group>"; };
+		A6099F281BE6495B006BF3D9 /* GRE 09.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 09.mp3"; sourceTree = "<group>"; };
+		A6099F291BE6495B006BF3D9 /* GRE 10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 10.mp3"; sourceTree = "<group>"; };
+		A6099F2A1BE6495B006BF3D9 /* GRE 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 11.mp3"; sourceTree = "<group>"; };
+		A6099F2B1BE6495B006BF3D9 /* GRE 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 12.mp3"; sourceTree = "<group>"; };
+		A6099F2C1BE6495B006BF3D9 /* GRE 13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 13.mp3"; sourceTree = "<group>"; };
+		A6099F2D1BE6495B006BF3D9 /* GRE 14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 14.mp3"; sourceTree = "<group>"; };
+		A6099F2E1BE6495B006BF3D9 /* GRE 15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 15.mp3"; sourceTree = "<group>"; };
+		A6099F2F1BE6495B006BF3D9 /* GRE 16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 16.mp3"; sourceTree = "<group>"; };
+		A6099F301BE6495B006BF3D9 /* GRE 17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 17.mp3"; sourceTree = "<group>"; };
+		A6099F311BE6495B006BF3D9 /* GRE 18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 18.mp3"; sourceTree = "<group>"; };
+		A6099F321BE6495B006BF3D9 /* GRE 19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 19.mp3"; sourceTree = "<group>"; };
+		A6099F331BE6495B006BF3D9 /* GRE 20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 20.mp3"; sourceTree = "<group>"; };
+		A6099F341BE6495B006BF3D9 /* GRE 21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 21.mp3"; sourceTree = "<group>"; };
+		A6099F351BE6495B006BF3D9 /* GRE 22.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 22.mp3"; sourceTree = "<group>"; };
+		A6099F501BE661FB006BF3D9 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = "<group>"; };
+		A6099F511BE661FB006BF3D9 /* Dict.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dict.sqlite3; sourceTree = "<group>"; };
 		A63331AA1BC63E5C0050FF6F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63331AB1BC63E5C0050FF6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A63331AC1BC63E5C0050FF6F /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
@@ -79,56 +126,15 @@
 		A63331B11BC63E5C0050FF6F /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		A63331B21BC63E5C0050FF6F /* ListenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenViewController.swift; sourceTree = "<group>"; };
 		A63331B31BC63E5C0050FF6F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 32.mp3"; sourceTree = "<group>"; };
 		A63331C41BC63E700050FF6F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A63331CC1BC67A420050FF6F /* Dict.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dict.sqlite3; sourceTree = "<group>"; };
-		A648B95C1BC7AAC0004210C1 /* GRE 31.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 31.TXT"; sourceTree = "<group>"; };
-		A648B95D1BC7AAC0004210C1 /* GRE 32.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 32.TXT"; sourceTree = "<group>"; };
-		A648B9601BC7AADF004210C1 /* GRE 31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 31.mp3"; sourceTree = "<group>"; };
 		A648B9621BC8E77A004210C1 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		A648B9641BC8EA99004210C1 /* ScanFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanFilterViewController.swift; sourceTree = "<group>"; };
-		A648B9681BCA3BAD004210C1 /* GRE 30.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 30.TXT"; sourceTree = "<group>"; };
-		A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 30.mp3"; sourceTree = "<group>"; };
 		A648B96E1BCE529D004210C1 /* WordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		A672644A1BC63D6600CE6E6F /* AudioMnemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioMnemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67264591BC63D6600CE6E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A672645B1BC63D6600CE6E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A69DBAF71BD87F000072CEFA /* GRE 23.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 23.TXT"; sourceTree = "<group>"; };
-		A69DBAF81BD87F000072CEFA /* GRE 24.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 24.TXT"; sourceTree = "<group>"; };
-		A69DBAF91BD87F000072CEFA /* GRE 25.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 25.TXT"; sourceTree = "<group>"; };
-		A69DBAFA1BD87F000072CEFA /* GRE 26.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 26.TXT"; sourceTree = "<group>"; };
-		A69DBAFB1BD87F000072CEFA /* GRE 27.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 27.TXT"; sourceTree = "<group>"; };
-		A69DBB011BD87F160072CEFA /* GRE 23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 23.mp3"; sourceTree = "<group>"; };
-		A69DBB021BD87F160072CEFA /* GRE 24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 24.mp3"; sourceTree = "<group>"; };
-		A69DBB031BD87F160072CEFA /* GRE 25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 25.mp3"; sourceTree = "<group>"; };
-		A69DBB041BD87F160072CEFA /* GRE 26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 26.mp3"; sourceTree = "<group>"; };
-		A69DBB051BD87F160072CEFA /* GRE 27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 27.mp3"; sourceTree = "<group>"; };
-		A69DBB0C1BD94D6A0072CEFA /* GRE 33.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 33.TXT"; sourceTree = "<group>"; };
-		A69DBB0D1BD94D6A0072CEFA /* GRE 34.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 34.TXT"; sourceTree = "<group>"; };
-		A69DBB0E1BD94D6A0072CEFA /* GRE 35.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 35.TXT"; sourceTree = "<group>"; };
-		A69DBB0F1BD94D6A0072CEFA /* GRE 36.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 36.TXT"; sourceTree = "<group>"; };
-		A69DBB101BD94D6A0072CEFA /* GRE 37.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 37.TXT"; sourceTree = "<group>"; };
-		A69DBB111BD94D6A0072CEFA /* GRE 38.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 38.TXT"; sourceTree = "<group>"; };
-		A69DBB121BD94D6A0072CEFA /* GRE 39.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 39.TXT"; sourceTree = "<group>"; };
-		A69DBB131BD94D6A0072CEFA /* GRE 40.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 40.TXT"; sourceTree = "<group>"; };
-		A69DBB1C1BD94DA50072CEFA /* GRE 33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 33.mp3"; sourceTree = "<group>"; };
-		A69DBB1D1BD94DA50072CEFA /* GRE 34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 34.mp3"; sourceTree = "<group>"; };
-		A69DBB1E1BD94DA50072CEFA /* GRE 35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 35.mp3"; sourceTree = "<group>"; };
-		A69DBB1F1BD94DA50072CEFA /* GRE 36.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 36.mp3"; sourceTree = "<group>"; };
-		A69DBB201BD94DA50072CEFA /* GRE 37.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 37.mp3"; sourceTree = "<group>"; };
-		A69DBB211BD94DA50072CEFA /* GRE 38.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 38.mp3"; sourceTree = "<group>"; };
-		A69DBB221BD94DA50072CEFA /* GRE 39.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 39.mp3"; sourceTree = "<group>"; };
-		A69DBB231BD94DA50072CEFA /* GRE 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 40.mp3"; sourceTree = "<group>"; };
 		A69DBB2C1BDA15760072CEFA /* SpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
-		A69DBB2E1BDA7A780072CEFA /* GRE 41.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 41.TXT"; sourceTree = "<group>"; };
-		A69DBB2F1BDA7A780072CEFA /* GRE 42.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 42.TXT"; sourceTree = "<group>"; };
-		A69DBB321BDA7A920072CEFA /* GRE 41.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 41.mp3"; sourceTree = "<group>"; };
-		A69DBB331BDA7A920072CEFA /* GRE 42.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 42.mp3"; sourceTree = "<group>"; };
 		A6D13B3F1BD67744000B429E /* LinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
-		A6E5240A1BD3D8EF0045E291 /* GRE 28.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 28.TXT"; sourceTree = "<group>"; };
-		A6E5240B1BD3D8EF0045E291 /* GRE 29.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GRE 29.TXT"; sourceTree = "<group>"; };
-		A6E5240E1BD3D90F0045E291 /* GRE 28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 28.mp3"; sourceTree = "<group>"; };
-		A6E5240F1BD3D90F0045E291 /* GRE 29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "GRE 29.mp3"; sourceTree = "<group>"; };
 		C247C192FE1FBBF3CF2DE59E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +196,6 @@
 				A63331AE1BC63E5C0050FF6F /* DB.swift */,
 				A67264581BC63D6600CE6E6F /* LaunchScreen.storyboard */,
 				A69DBB0B1BD87F340072CEFA /* Data */,
-				A63331CC1BC67A420050FF6F /* Dict.sqlite3 */,
 				A672645B1BC63D6600CE6E6F /* Info.plist */,
 			);
 			path = AudioMnemo;
@@ -199,46 +204,50 @@
 		A69DBB0B1BD87F340072CEFA /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A69DBAF71BD87F000072CEFA /* GRE 23.TXT */,
-				A69DBAF81BD87F000072CEFA /* GRE 24.TXT */,
-				A69DBAF91BD87F000072CEFA /* GRE 25.TXT */,
-				A69DBAFA1BD87F000072CEFA /* GRE 26.TXT */,
-				A69DBAFB1BD87F000072CEFA /* GRE 27.TXT */,
-				A6E5240A1BD3D8EF0045E291 /* GRE 28.TXT */,
-				A6E5240B1BD3D8EF0045E291 /* GRE 29.TXT */,
-				A648B9681BCA3BAD004210C1 /* GRE 30.TXT */,
-				A648B95C1BC7AAC0004210C1 /* GRE 31.TXT */,
-				A648B95D1BC7AAC0004210C1 /* GRE 32.TXT */,
-				A69DBB0C1BD94D6A0072CEFA /* GRE 33.TXT */,
-				A69DBB0D1BD94D6A0072CEFA /* GRE 34.TXT */,
-				A69DBB0E1BD94D6A0072CEFA /* GRE 35.TXT */,
-				A69DBB0F1BD94D6A0072CEFA /* GRE 36.TXT */,
-				A69DBB101BD94D6A0072CEFA /* GRE 37.TXT */,
-				A69DBB111BD94D6A0072CEFA /* GRE 38.TXT */,
-				A69DBB121BD94D6A0072CEFA /* GRE 39.TXT */,
-				A69DBB131BD94D6A0072CEFA /* GRE 40.TXT */,
-				A69DBB2E1BDA7A780072CEFA /* GRE 41.TXT */,
-				A69DBB2F1BDA7A780072CEFA /* GRE 42.TXT */,
-				A69DBB011BD87F160072CEFA /* GRE 23.mp3 */,
-				A69DBB021BD87F160072CEFA /* GRE 24.mp3 */,
-				A69DBB031BD87F160072CEFA /* GRE 25.mp3 */,
-				A69DBB041BD87F160072CEFA /* GRE 26.mp3 */,
-				A69DBB051BD87F160072CEFA /* GRE 27.mp3 */,
-				A6E5240E1BD3D90F0045E291 /* GRE 28.mp3 */,
-				A6E5240F1BD3D90F0045E291 /* GRE 29.mp3 */,
-				A648B96A1BCA3BBC004210C1 /* GRE 30.mp3 */,
-				A648B9601BC7AADF004210C1 /* GRE 31.mp3 */,
-				A63331B61BC63E5C0050FF6F /* GRE 32.mp3 */,
-				A69DBB1C1BD94DA50072CEFA /* GRE 33.mp3 */,
-				A69DBB1D1BD94DA50072CEFA /* GRE 34.mp3 */,
-				A69DBB1E1BD94DA50072CEFA /* GRE 35.mp3 */,
-				A69DBB1F1BD94DA50072CEFA /* GRE 36.mp3 */,
-				A69DBB201BD94DA50072CEFA /* GRE 37.mp3 */,
-				A69DBB211BD94DA50072CEFA /* GRE 38.mp3 */,
-				A69DBB221BD94DA50072CEFA /* GRE 39.mp3 */,
-				A69DBB231BD94DA50072CEFA /* GRE 40.mp3 */,
-				A69DBB321BDA7A920072CEFA /* GRE 41.mp3 */,
-				A69DBB331BDA7A920072CEFA /* GRE 42.mp3 */,
+				A6099F201BE6495B006BF3D9 /* GRE 01.mp3 */,
+				A6099F211BE6495B006BF3D9 /* GRE 02.mp3 */,
+				A6099F221BE6495B006BF3D9 /* GRE 03.mp3 */,
+				A6099F231BE6495B006BF3D9 /* GRE 04.mp3 */,
+				A6099F241BE6495B006BF3D9 /* GRE 05.mp3 */,
+				A6099F251BE6495B006BF3D9 /* GRE 06.mp3 */,
+				A6099F261BE6495B006BF3D9 /* GRE 07.mp3 */,
+				A6099F271BE6495B006BF3D9 /* GRE 08.mp3 */,
+				A6099F281BE6495B006BF3D9 /* GRE 09.mp3 */,
+				A6099F291BE6495B006BF3D9 /* GRE 10.mp3 */,
+				A6099F2A1BE6495B006BF3D9 /* GRE 11.mp3 */,
+				A6099F2B1BE6495B006BF3D9 /* GRE 12.mp3 */,
+				A6099F2C1BE6495B006BF3D9 /* GRE 13.mp3 */,
+				A6099F2D1BE6495B006BF3D9 /* GRE 14.mp3 */,
+				A6099F2E1BE6495B006BF3D9 /* GRE 15.mp3 */,
+				A6099F2F1BE6495B006BF3D9 /* GRE 16.mp3 */,
+				A6099F301BE6495B006BF3D9 /* GRE 17.mp3 */,
+				A6099F311BE6495B006BF3D9 /* GRE 18.mp3 */,
+				A6099F321BE6495B006BF3D9 /* GRE 19.mp3 */,
+				A6099F331BE6495B006BF3D9 /* GRE 20.mp3 */,
+				A6099F341BE6495B006BF3D9 /* GRE 21.mp3 */,
+				A6099F351BE6495B006BF3D9 /* GRE 22.mp3 */,
+				A6099EF81BE64942006BF3D9 /* GRE 23.mp3 */,
+				A6099EF91BE64942006BF3D9 /* GRE 24.mp3 */,
+				A6099EFA1BE64942006BF3D9 /* GRE 25.mp3 */,
+				A6099EFB1BE64942006BF3D9 /* GRE 26.mp3 */,
+				A6099EFC1BE64942006BF3D9 /* GRE 27.mp3 */,
+				A6099EFD1BE64942006BF3D9 /* GRE 28.mp3 */,
+				A6099EFE1BE64942006BF3D9 /* GRE 29.mp3 */,
+				A6099EFF1BE64942006BF3D9 /* GRE 30.mp3 */,
+				A6099F001BE64942006BF3D9 /* GRE 31.mp3 */,
+				A6099F011BE64942006BF3D9 /* GRE 32.mp3 */,
+				A6099F021BE64942006BF3D9 /* GRE 33.mp3 */,
+				A6099F031BE64942006BF3D9 /* GRE 34.mp3 */,
+				A6099F041BE64942006BF3D9 /* GRE 35.mp3 */,
+				A6099F051BE64942006BF3D9 /* GRE 36.mp3 */,
+				A6099F061BE64942006BF3D9 /* GRE 37.mp3 */,
+				A6099F071BE64942006BF3D9 /* GRE 38.mp3 */,
+				A6099F081BE64942006BF3D9 /* GRE 39.mp3 */,
+				A6099F091BE64942006BF3D9 /* GRE 40.mp3 */,
+				A6099F0A1BE64942006BF3D9 /* GRE 41.mp3 */,
+				A6099F0B1BE64942006BF3D9 /* GRE 42.mp3 */,
+				A6099F501BE661FB006BF3D9 /* db.sqlite3 */,
+				A6099F511BE661FB006BF3D9 /* Dict.sqlite3 */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -314,50 +323,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69DBB0A1BD87F160072CEFA /* GRE 27.mp3 in Resources */,
-				A6E524111BD3D90F0045E291 /* GRE 29.mp3 in Resources */,
-				A69DBB1A1BD94D6A0072CEFA /* GRE 39.TXT in Resources */,
-				A648B95E1BC7AAC0004210C1 /* GRE 31.TXT in Resources */,
+				A6099F1A1BE64942006BF3D9 /* GRE 37.mp3 in Resources */,
+				A6099F3A1BE6495B006BF3D9 /* GRE 05.mp3 in Resources */,
 				A63331B81BC63E5C0050FF6F /* Assets.xcassets in Resources */,
-				A69DBB181BD94D6A0072CEFA /* GRE 37.TXT in Resources */,
-				A69DBB151BD94D6A0072CEFA /* GRE 34.TXT in Resources */,
-				A69DBB301BDA7A780072CEFA /* GRE 41.TXT in Resources */,
-				A69DBAFD1BD87F000072CEFA /* GRE 24.TXT in Resources */,
-				A6E524101BD3D90F0045E291 /* GRE 28.mp3 in Resources */,
-				A69DBB091BD87F160072CEFA /* GRE 26.mp3 in Resources */,
-				A69DBB2B1BD94DA50072CEFA /* GRE 40.mp3 in Resources */,
+				A6099F121BE64942006BF3D9 /* GRE 29.mp3 in Resources */,
+				A6099F371BE6495B006BF3D9 /* GRE 02.mp3 in Resources */,
+				A6099F101BE64942006BF3D9 /* GRE 27.mp3 in Resources */,
+				A6099F401BE6495B006BF3D9 /* GRE 11.mp3 in Resources */,
+				A6099F1C1BE64942006BF3D9 /* GRE 39.mp3 in Resources */,
+				A6099F0D1BE64942006BF3D9 /* GRE 24.mp3 in Resources */,
+				A6099F191BE64942006BF3D9 /* GRE 36.mp3 in Resources */,
+				A6099F3C1BE6495B006BF3D9 /* GRE 07.mp3 in Resources */,
+				A6099F461BE6495B006BF3D9 /* GRE 17.mp3 in Resources */,
+				A6099F3F1BE6495B006BF3D9 /* GRE 10.mp3 in Resources */,
+				A6099F1F1BE64942006BF3D9 /* GRE 42.mp3 in Resources */,
+				A6099F0C1BE64942006BF3D9 /* GRE 23.mp3 in Resources */,
+				A6099F491BE6495B006BF3D9 /* GRE 20.mp3 in Resources */,
+				A6099F4A1BE6495B006BF3D9 /* GRE 21.mp3 in Resources */,
+				A6099F0E1BE64942006BF3D9 /* GRE 25.mp3 in Resources */,
+				A6099F3E1BE6495B006BF3D9 /* GRE 09.mp3 in Resources */,
+				A6099F441BE6495B006BF3D9 /* GRE 15.mp3 in Resources */,
+				A6099F391BE6495B006BF3D9 /* GRE 04.mp3 in Resources */,
+				A6099F111BE64942006BF3D9 /* GRE 28.mp3 in Resources */,
+				A6099F471BE6495B006BF3D9 /* GRE 18.mp3 in Resources */,
+				A6099F481BE6495B006BF3D9 /* GRE 19.mp3 in Resources */,
 				A672645A1BC63D6600CE6E6F /* LaunchScreen.storyboard in Resources */,
-				A69DBB171BD94D6A0072CEFA /* GRE 36.TXT in Resources */,
-				A648B9691BCA3BAD004210C1 /* GRE 30.TXT in Resources */,
+				A6099F1B1BE64942006BF3D9 /* GRE 38.mp3 in Resources */,
+				A6099F161BE64942006BF3D9 /* GRE 33.mp3 in Resources */,
+				A6099F141BE64942006BF3D9 /* GRE 31.mp3 in Resources */,
 				A63331C51BC63E700050FF6F /* Main.storyboard in Resources */,
-				A63331C31BC63E5C0050FF6F /* GRE 32.mp3 in Resources */,
-				A69DBB271BD94DA50072CEFA /* GRE 36.mp3 in Resources */,
-				A648B96B1BCA3BBC004210C1 /* GRE 30.mp3 in Resources */,
-				A69DBB161BD94D6A0072CEFA /* GRE 35.TXT in Resources */,
-				A69DBB1B1BD94D6A0072CEFA /* GRE 40.TXT in Resources */,
-				A69DBB341BDA7A920072CEFA /* GRE 41.mp3 in Resources */,
-				A69DBAFE1BD87F000072CEFA /* GRE 25.TXT in Resources */,
-				A648B9611BC7AADF004210C1 /* GRE 31.mp3 in Resources */,
-				A69DBB351BDA7A920072CEFA /* GRE 42.mp3 in Resources */,
-				A69DBAFC1BD87F000072CEFA /* GRE 23.TXT in Resources */,
-				A69DBB241BD94DA50072CEFA /* GRE 33.mp3 in Resources */,
-				A69DBB081BD87F160072CEFA /* GRE 25.mp3 in Resources */,
-				A6E5240D1BD3D8EF0045E291 /* GRE 29.TXT in Resources */,
-				A69DBB141BD94D6A0072CEFA /* GRE 33.TXT in Resources */,
-				A69DBB261BD94DA50072CEFA /* GRE 35.mp3 in Resources */,
-				A69DBB291BD94DA50072CEFA /* GRE 38.mp3 in Resources */,
-				A69DBB191BD94D6A0072CEFA /* GRE 38.TXT in Resources */,
-				A6E5240C1BD3D8EF0045E291 /* GRE 28.TXT in Resources */,
-				A69DBB251BD94DA50072CEFA /* GRE 34.mp3 in Resources */,
-				A63331CD1BC67A420050FF6F /* Dict.sqlite3 in Resources */,
-				A648B95F1BC7AAC0004210C1 /* GRE 32.TXT in Resources */,
-				A69DBB2A1BD94DA50072CEFA /* GRE 39.mp3 in Resources */,
-				A69DBB071BD87F160072CEFA /* GRE 24.mp3 in Resources */,
-				A69DBB061BD87F160072CEFA /* GRE 23.mp3 in Resources */,
-				A69DBB281BD94DA50072CEFA /* GRE 37.mp3 in Resources */,
-				A69DBAFF1BD87F000072CEFA /* GRE 26.TXT in Resources */,
-				A69DBB311BDA7A780072CEFA /* GRE 42.TXT in Resources */,
-				A69DBB001BD87F000072CEFA /* GRE 27.TXT in Resources */,
+				A6099F131BE64942006BF3D9 /* GRE 30.mp3 in Resources */,
+				A6099F1D1BE64942006BF3D9 /* GRE 40.mp3 in Resources */,
+				A6099F521BE661FB006BF3D9 /* db.sqlite3 in Resources */,
+				A6099F181BE64942006BF3D9 /* GRE 35.mp3 in Resources */,
+				A6099F361BE6495B006BF3D9 /* GRE 01.mp3 in Resources */,
+				A6099F411BE6495B006BF3D9 /* GRE 12.mp3 in Resources */,
+				A6099F1E1BE64942006BF3D9 /* GRE 41.mp3 in Resources */,
+				A6099F151BE64942006BF3D9 /* GRE 32.mp3 in Resources */,
+				A6099F0F1BE64942006BF3D9 /* GRE 26.mp3 in Resources */,
+				A6099F3B1BE6495B006BF3D9 /* GRE 06.mp3 in Resources */,
+				A6099F531BE661FB006BF3D9 /* Dict.sqlite3 in Resources */,
+				A6099F381BE6495B006BF3D9 /* GRE 03.mp3 in Resources */,
+				A6099F431BE6495B006BF3D9 /* GRE 14.mp3 in Resources */,
+				A6099F4B1BE6495B006BF3D9 /* GRE 22.mp3 in Resources */,
+				A6099F451BE6495B006BF3D9 /* GRE 16.mp3 in Resources */,
+				A6099F421BE6495B006BF3D9 /* GRE 13.mp3 in Resources */,
+				A6099F3D1BE6495B006BF3D9 /* GRE 08.mp3 in Resources */,
+				A6099F171BE64942006BF3D9 /* GRE 34.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,10 +546,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AudioMnemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Thu.Duj.AudioMnemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -548,9 +562,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AudioMnemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Thu.Duj.AudioMnemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

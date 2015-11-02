@@ -15,7 +15,7 @@ struct Sound{
     var audioFile: String?
 }
 
-let audioOffsetTime = 0.1               //extend audio 0.1 seconds both before and after
+let audioOffsetTime = 0.0               //extend audio 0.05 seconds both before and after
 class Audio{
     
     var player: AVAudioPlayer!
@@ -26,7 +26,7 @@ class Audio{
     var timerDict: NSMutableDictionary!
     var soundsQueue: [Sound]!
     
-    let timerInterval:Double=0.5
+    let timerInterval:Double=0.1        // audio labels gap should be greater than (timerInterval + audioOffsetTime)
     
     
     init(){
@@ -74,7 +74,6 @@ class Audio{
         }
         timer?.invalidate()
         let sound = soundsQueue.removeAtIndex(0)
-//        print("play \(sound.audioFile) from \(sound.startTime) to \(sound.endTime)")
         if(sound.startTime == nil || sound.endTime == nil )
         {
             return
@@ -91,7 +90,6 @@ class Audio{
         }
         clearSounds()
         for var i:Int = 0; i < count; i++ {
-//            print("add \(fileName[i]) from \(startTime[i]) to \(endTime[i])")
             soundsQueue.append(Sound(startTime: startTime[i], endTime: endTime[i], audioFile: fileName[i]))
         }
         processSounds()
@@ -109,9 +107,13 @@ class Audio{
             player?.stop()
             audioFile = fileName!
             do {
-                let filePath=NSBundle.mainBundle().pathForResource(audioFile, ofType: "mp3")!
-                try player = AVAudioPlayer(contentsOfURL: NSURL (fileURLWithPath: filePath), fileTypeHint:nil)
-                player.prepareToPlay()
+                if let filePath = NSBundle.mainBundle().pathForResource(audioFile, ofType: "mp3") {
+                    try player = AVAudioPlayer(contentsOfURL: NSURL (fileURLWithPath: filePath), fileTypeHint:nil)
+                    player.prepareToPlay()
+                }
+                else{
+                    return
+                }
             }catch{
                 print("\(audioFile) open failed")
             }
@@ -120,9 +122,9 @@ class Audio{
             player.pause()
         }
         timer?.invalidate()
-        player.currentTime = startTime - audioOffsetTime
+        player.currentTime = startTime
         player.play()
-        let timerDic:NSMutableDictionary = ["endTime": endTime + audioOffsetTime]
+        let timerDic:NSMutableDictionary = ["endTime": endTime]
         timer = NSTimer.scheduledTimerWithTimeInterval(timerInterval, target: self, selector: "checkTime", userInfo: timerDic, repeats: true)
     }
 
@@ -135,7 +137,6 @@ class Audio{
             listPlayer.rate = speed
             listPlayer.delegate = delegate
             listPlayer.prepareToPlay()
-            print("begin to play")
             listPlayer.play()
         }catch{
             print("lisPlayer created failed")

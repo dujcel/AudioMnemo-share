@@ -13,6 +13,7 @@ import SQLite
 class DictionaryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchDisplayDelegate{
     
     @IBOutlet var tableView: UITableView!
+    
     var am: AudioMnemo!
     var wordsID: [Int]!
     
@@ -34,7 +35,7 @@ class DictionaryViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let wordID = wordsID[indexPath.row]
         let cell =  tableView.dequeueReusableCellWithIdentifier("searchWordCell")!
-        cell.textLabel?.text = am.db.readWordName(wordID)
+        cell.textLabel?.text = am.db.readWord(wordID)?.name
         return cell
     }
     

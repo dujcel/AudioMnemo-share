@@ -28,7 +28,7 @@ class ScanFilterViewController: UITableViewController{
     }
     
     override func viewWillDisappear(animated: Bool) {
-        am.db.updateScanList(am.db.readConfig("scan_minLevel")!, maxLevel: am.db.readConfig("scan_maxLevel")!)
+        am.db.updateScanList(am.db.readConfig("scan_minLevel")!, maxLevel: am.db.readConfig("scan_maxLevel")!, shuffle: am.db.readConfig("scan_shuffle") == 1)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -40,7 +40,7 @@ class ScanFilterViewController: UITableViewController{
    
      // UITextFieldDelegate Methods
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,6 +48,8 @@ class ScanFilterViewController: UITableViewController{
             return 2
         }
         else if(section == 1){
+            return 1
+        }else if(section == 2){
             return lists.count
         }else{
             return 0
@@ -56,7 +58,8 @@ class ScanFilterViewController: UITableViewController{
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if(section == 0){
             return "Filters"
-        }else if section == 2{
+        }
+        else if section == 2{
             return "Lists"
         }else{
             return nil
@@ -84,6 +87,12 @@ class ScanFilterViewController: UITableViewController{
                     cell.stepper.value = (Double)(maxLevel)
                 }
                 return cell
+            }else if(indexPath.section == 1){
+                let cell =  tableView.dequeueReusableCellWithIdentifier("switchCell") as! SwitchCell
+                cell.vc = self
+                cell.nameLabel?.text = "Shuffle"
+                cell.switchBtn.on = (am.db.readConfig("scan_shuffle") == 1)
+                return cell
             }else{
                 let id :Int = indexPath.row
                 let cell =  tableView.dequeueReusableCellWithIdentifier("twoLabelsCell") as! TwoLabelsCell
@@ -104,7 +113,7 @@ class ScanFilterViewController: UITableViewController{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        if indexPath.section == 1 {
+        if indexPath.section == 2 {
             let row = indexPath.row
             if let cell = tableView.cellForRowAtIndexPath(indexPath)  {
                 if cell.accessoryType == .Checkmark
@@ -129,9 +138,22 @@ class ScanFilterViewController: UITableViewController{
     }
     
 }
+class SwitchCell:UITableViewCell{
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var switchBtn: UISwitch!
+    var vc: ScanFilterViewController!
+    
+    @IBAction func didSwitch(sender: UISwitch) {
+        if nameLabel.text == "Shuffle" {
+            vc.am.db.updateConfig("scan_shuffle", with: sender.on ? 1 : 0)
+        }
+    }
+}
 class TwoLabelsCell: UITableViewCell{
     
     @IBOutlet var nameLabel: UILabel!
+    
     
     @IBOutlet var valueLabel: UILabel!
 }
@@ -154,10 +176,8 @@ class PickerCell: UITableViewCell{
         if let l = (Int)(value.text!) {
             if( level.text == "Min Level"){
                 vc.am.db.updateConfig("scan_minLevel", with:l)
-                print("minLevel is changed to \(l)")
             }else{
                 vc.am.db.updateConfig("scan_maxLevel", with:l)
-                print("maxLevel is changed to \(l)")
             }
         }
     }

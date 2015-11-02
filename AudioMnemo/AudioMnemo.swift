@@ -88,7 +88,7 @@ class AudioMnemo{
         settingVC0 = settingVCs.viewControllers[0] as! SettingViewController
         audio = Audio()
         scanWords = [(Int, Int)]()
-        db = DB(am: self)
+        db = DB(am: self,mode: 0)
     }
     
     func exportAudioForList(comletion:() -> ()){

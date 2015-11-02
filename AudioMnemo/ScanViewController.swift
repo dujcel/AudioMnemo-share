@@ -40,7 +40,7 @@ class ScanViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         index = am.db.readConfig("scan_index")!
         num = am.db.readConfig("scan_num")!
-        word = am.db.readScanWord(index)
+        word = am.db.readScanWord(sort:index)
         updateView()
         self.navigationItem.rightBarButtonItem?.enabled = (word != nil)
 
@@ -73,7 +73,7 @@ class ScanViewController: UIViewController {
             index++
             am.db.updateConfig("scan_index", with: index)
         }
-        word = am.db.readScanWord(index)
+        word = am.db.readScanWord(sort:index)
         updateView()
     }
     
@@ -82,7 +82,7 @@ class ScanViewController: UIViewController {
            index--
             am.db.updateConfig("scan_index", with: index)
         }
-        word = am.db.readScanWord(index)
+        word = am.db.readScanWord(sort:index)
         updateView()
     }
     
@@ -96,7 +96,7 @@ class ScanViewController: UIViewController {
             }
             contentText.text = ""
             for id in word.linksID {
-                contentText.text.appendContentsOf("\(am.db.readWordName(id)!)   ")
+                contentText.text.appendContentsOf("\(am.db.readWord(id)!.name)   ")
             }
             audio.clearSounds()
             if(am.db.readConfig("scan_autoSpeak")! == 1){
@@ -121,12 +121,13 @@ class ScanViewController: UIViewController {
         nextWord()
     }
     @IBAction func didTap(sender: UITapGestureRecognizer) {
-        let loc=sender.locationInView(self.view)
+        let loc = sender.locationInView(self.view)
         
         if wordLabel.frame.contains(loc) && word != nil{
             wordLabel.text = word.name
         }else{
-            if(loc.x >= 160){
+            let width = UIScreen.mainScreen().bounds.size.width
+            if(loc.x >= width/2){
                 if word != nil{
                     am.decLevel(word)
                 }

@@ -21,15 +21,22 @@ class WordViewController: UIViewController{
         super.viewDidLoad()
         am = (UIApplication.sharedApplication().delegate as! AppDelegate).am
         audio = am.audio
+        
+        contentText.editable = false
+        contentText.textAlignment = NSTextAlignment.Center
+        contentText.selectable = false
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         if word != nil{
-            if am.db.readConfig("scan_autoWordDisplay")! == 1{
-                nameLabel.text = word.name
-            }else{
-                nameLabel.text = "Tap me"
-            }
+            nameLabel.text = word.name
             contentText.text = ""
             for id in word.linksID {
-                contentText.text.appendContentsOf("\(am.db.readWordName(id)!)   ")
+                if let name = am.db.readWord(id)?.name {
+                    contentText.text.appendContentsOf("\(name)   ")
+                }
             }
             audio.clearSounds()
             if(am.db.readConfig("scan_autoSpeak")! == 1){
@@ -62,6 +69,17 @@ class WordViewController: UIViewController{
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "linkSegue2" {
+            let linkVC = segue.destinationViewController as! LinkViewController
+            linkVC.word = word
+            linkVC.title = word.name
+            let backItem:UIBarButtonItem = UIBarButtonItem()
+            backItem.title = "Back"
+            self.navigationItem.backBarButtonItem = backItem
+        }
     }
 
 }

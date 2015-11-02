@@ -36,7 +36,7 @@ class LinkViewController: UIViewController,UITableViewDelegate, UITableViewDataS
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let wordID = wordsID[indexPath.row]
         let cell =  tableView.dequeueReusableCellWithIdentifier("searchWordCell")!
-        cell.textLabel?.text = am.db.readWordName(wordID)
+        cell.textLabel?.text = am.db.readWord(wordID)?.name
         if word.linksID.contains(wordID) {
             cell.accessoryType = .Checkmark
         }else{

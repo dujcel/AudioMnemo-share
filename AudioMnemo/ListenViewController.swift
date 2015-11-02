@@ -59,12 +59,10 @@ class ListenViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func didPlay(sender: UIButton) {
         if isPlaying {
-            print("pause")
             am.audio.listPlayer?.pause()
             isPlaying = false
             sender.setImage(UIImage(named: "play"), forState: UIControlState.Normal)
         }else{
-            print("play")
             if !readyToPlay {
                 actIndicator.hidden = false
                 actIndicator.startAnimating()
@@ -84,24 +82,6 @@ class ListenViewController: UIViewController, UITableViewDataSource, UITableView
                     })
                     })
                 })
-
-                
-//                dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), {
-//                    let item = AVPlayerItem(asset: self.am.composeScanList(self.am.config["listen_reverse"] == 1, emptyTime: 0.5))
-//                    item.audioTimePitchAlgorithm = AVAudioTimePitchAlgorithmSpectral;
-//                    self.am.audio.avplayer = AVPlayer(playerItem: item)
-//                    self.am.audio.avplayer.rate = 2.0
-//                    self.am.audio.avplayer.play()
-//                    self.isPlaying = true
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                    
-//                    self.actIndicator.stopAnimating()
-//                    self.playBtn.setImage(UIImage(named: "pause"), forState: UIControlState.Normal)
-//                    self.playBtn.hidden = false
-//                    self.stopBtn.hidden = false
-//                    })
-//                    })
-                
                 
             }else{
                 am.audio.listPlayer?.rate = speedArray[speedIndex]
@@ -145,7 +125,7 @@ class ListenViewController: UIViewController, UITableViewDataSource, UITableView
         return am.db.readConfig("scan_num")!
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let word = am.db.readScanWord(indexPath.row + 1)!
+        let word = am.db.readScanWord(sort:indexPath.row + 1)!
         let cell =  tableView.dequeueReusableCellWithIdentifier("listenWordCell")!
         cell.textLabel?.text = word.name
         cell.detailTextLabel?.text = "\(word.level)"
