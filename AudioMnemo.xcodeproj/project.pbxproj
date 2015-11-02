@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		831A2842346EE36070F3D9D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512A5128AAB804AE5FACE58F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		831A2842346EE36070F3D9D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512A5128AAB804AE5FACE58F /* Pods.framework */; };
 		A6099F0C1BE64942006BF3D9 /* GRE 23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EF81BE64942006BF3D9 /* GRE 23.mp3 */; };
 		A6099F0D1BE64942006BF3D9 /* GRE 24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EF91BE64942006BF3D9 /* GRE 24.mp3 */; };
 		A6099F0E1BE64942006BF3D9 /* GRE 25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6099EFA1BE64942006BF3D9 /* GRE 25.mp3 */; };
